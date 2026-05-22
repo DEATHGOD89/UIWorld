@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRACLE // Transform Data Into Decisions With AI</title>
+  <meta name="description" content="Unlock your business potential with smart tools that streamline workflows, boost productivity, and fuel rapid growth with AI.">
+  
+  <!-- SEO Meta Tags -->
+  <meta property="og:title" content="TRACLE // Transform Data Into Decisions With AI">
+  <meta property="og:description" content="High-fidelity AI scheduling, asset analytics, and business intelligence portal.">
+  <meta property="og:image" content="./assets/tracle_mockup.jpg">
+  <link rel="preload" as="image" href="./assets/avatar_1.png" fetchpriority="high">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Oswald:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./tracle.css">
+</head>
+<body class="tracle-active">
+
+  <!-- Custom Cursor Elements -->
+  <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring" id="custom-cursor-ring"></div>
+
+  <!-- Cosmic Sparks Canvas Backdrop -->
+  <canvas id="tracle-canvas"></canvas>
+
+  <!-- Dual Sweeping Header Spotlights -->
+  <div class="tracle-header-spotlight spot-left"></div>
+  <div class="tracle-header-spotlight spot-right"></div>
+
+  <!-- Spaced-Out Premium Navbar Capsule -->
+  <nav class="navbar scrolled" id="tracle-nav">
+    <div class="navbar-container">
+      
+      <!-- Left side: Brand Logo pill and Sequential Navigators -->
+      <div class="nav-left-hud">
+        
+        <!-- Sequential Navigators -->
+        <div class="nav-navigators">
+          <button class="btn-nav btn-prev" id="nav-prev" aria-label="Previous Page">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="nav-btn-text font-mono">PREV</span>
+          </button>
+          <button class="btn-nav btn-next" id="nav-next" aria-label="Next Page">
+            <span class="nav-btn-text font-mono">NEXT</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Tracle Logo capsule -->
+        <div class="nav-logo-capsule font-mono">
+          <span class="logo-circle"></span>
+          <span class="brand-title">Tracle</span>
+        </div>
+      </div>
+
+      <!-- Center side: Sections links capsule -->
+      <div class="nav-links-mid font-mono">
+        <a href="#features" class="capsule-link active">Features</a>
+        <a href="#workflow" class="capsule-link">How It Works</a>
+        <a href="#pricing" class="capsule-link">Pricing</a>
+        <a href="#testimonials" class="capsule-link">Testimonials</a>
+      </div>
+
+      <!-- Right side: Book call capsule -->
+      <div class="nav-actions">
+        <a href="#booking" class="btn-call-capsule font-mono">Book a Call</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- SECTION 1: HERO DISPLAY SECTION -->
+  <section class="section-tracle-hero" id="home">
+    <div class="tracle-grid-container">
+      
+      <!-- Main Titles and CTA row -->
+      <div class="hero-text-block">
+        <h1 class="hero-main-title font-oswald scramble-decrypt" data-text="Transform Data Into Decisions With AI.">
+          Transform Data Into Decisions With AI.
+        </h1>
+        <p class="hero-subtitle">
+          Unlock your business potential with smart tools that streamline workflows, boost productivity, and fuel rapid growth.
+        </p>
+        <div class="hero-cta-wrapper">
+          <a href="#booking" class="btn-tracle-pill btn-purple-glow font-mono">
+            <span>Get Started</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- CENTERPIECE: ULTRA HIGH-FIDELITY DARK GLOWING INTERACTIVE DASHBOARD -->
+      <div class="tracle-dashboard-wrapper">
+        <div class="tracle-dashboard-mock">
+          
+          <!-- 1. Top Bar -->
+          <div class="dash-top-bar font-mono">
+            <div class="bar-left">
+              <span class="bar-brand-dot"></span>
+              <span class="bar-brand-title">tracle</span>
+            </div>
+            
+            <div class="bar-center">
+              <div class="dash-search-box">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <span>Search...</span>
+              </div>
+            </div>
+
+            <div class="bar-right">
+              <div class="user-badge">
+                <img src="./assets/avatar_1.png" alt="User Avatar" class="user-avatar-img">
+                <span class="user-name">Jad S.</span>
+              </div>
+              <button class="btn-dash-settings" aria-label="Settings">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- 2. Main Dashboard cockpit body -->
+          <div class="dash-body-grid">
+            
+            <!-- Left sidebar -->
+            <aside class="dash-sidebar font-mono">
+              <div class="sidebar-links-list">
+                <a href="#" class="side-link active">
+                  <span class="link-dot"></span>
+                  <span class="link-txt">Dashboard</span>
+                </a>
+                <a href="#" class="side-link">
+                  <span class="link-dot"></span>
+                  <span class="link-txt">Assets</span>
+                </a>
+                <a href="#" class="side-link">
+                  <span class="link-dot"></span>
+                  <span class="link-txt">Transfers</span>
+                </a>
+                <a href="#" class="side-link">
+                  <span class="link-dot"></span>
+                  <span class="link-txt">Calculators</span>
+                </a>
+                <a href="#" class="side-link">
+                  <span class="link-dot"></span>
+                  <span class="link-txt">Stake A.I.</span>
+                  <span class="sidebar-pill">Beta</span>
+                </a>
+              </div>
+            </aside>
+
+            <!-- Main metrics & charts center content -->
+            <main class="dash-main-content">
+              
+              <!-- Top assets wave graph card -->
+              <div class="chart-card">
+                <div class="chart-header font-mono">
+                  <div class="header-left">
+                    <span class="chart-title">Top Assets</span>
+                    <span class="chart-period">This month</span>
+                  </div>
+                  <div class="header-right">
+                    <span class="asset-selector-pill active">30D</span>
+                    <span class="asset-selector-pill">ALL</span>
+                  </div>
+                </div>
+
+                <!-- Interactive canvas plotting graph -->
+                <div class="chart-canvas-wrapper">
+                  <canvas id="dashboard-chart-canvas"></canvas>
+                  
+                  <!-- Interactive Hover Dashed Tracking Cursor and coordinates tooltip bubble -->
+                  <div class="chart-tracker-cursor" id="chart-cursor-line"></div>
+                  <div class="chart-tooltip-bubble font-mono" id="chart-tooltip">
+                    <span class="tooltip-val">$45.5K</span>
+                    <span class="tooltip-label">On trade</span>
+                  </div>
+                </div>
+
+                <!-- Months axis indicators -->
+                <div class="chart-axis-months font-mono">
+                  <span>SEP</span>
+                  <span>OCT</span>
+                  <span>NOV</span>
+                  <span>DEC</span>
+                  <span>JAN</span>
+                  <span>FEB</span>
+                </div>
+              </div>
+
+              <!-- Lower row stakings details -->
+              <div class="staking-row font-mono">
+                <div class="staking-title-wrap">
+                  <span class="staking-label">Your active stakings</span>
+                  <h3 class="staking-amount">4,256.48 <span class="staking-unit">TRC</span></h3>
+                </div>
+                <div class="staking-actions">
+                  <span class="staking-tag">Balance Avalance</span>
+                  <button class="btn-staking-upgrade">Upgrade</button>
+                  <button class="btn-staking-withdraw">Withdraw</button>
+                </div>
+              </div>
+
+              <!-- Metrics widgets blocks grid -->
+              <div class="metrics-row font-mono">
+                <div class="metric-card">
+                  <span class="metric-label">Token Trend</span>
+                  <span class="metric-value decline">-0.22%</span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-label">Price</span>
+                  <span class="metric-value">$45.89 <span class="sub-val">/ USD</span></span>
+                </div>
+                <div class="metric-card">
+                  <span class="metric-label">Staking Info</span>
+                  <span class="metric-value growth">45.6%</span>
+                </div>
+              </div>
+
+            </main>
+
+            <!-- Right sidebar with actions -->
+            <aside class="dash-right-sidebar">
+              <div class="portfolio-card font-mono">
+                <div class="portfolio-header">
+                  <span class="portfolio-icon">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                  </span>
+                  <span class="portfolio-brand">Tracle Portfolio</span>
+                </div>
+                
+                <p class="portfolio-desc">
+                  An all-in-one portfolio that helps you make smarter AI investment decisions.
+                </p>
+
+                <div class="portfolio-ctas">
+                  <button class="btn-portfolio-action btn-request">Request Balance</button>
+                  <button class="btn-portfolio-action btn-withdraw">Withdraw Balance</button>
+                </div>
+              </div>
+            </aside>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: CLIENT LOGOS GRID (Inspiring Experiences) -->
+  <section class="section-tracle-logos">
+    <div class="tracle-grid-container">
+      <div class="logos-container">
+        <span class="logos-tagline font-mono">Inspiring experiences // Trusted by innovators worldwide</span>
+        <div class="logos-grid font-oswald">
+          <div class="logo-item">LOGOPISUM</div>
+          <div class="logo-item font-mono">⬡ Logoipsum</div>
+          <div class="logo-item">LGPISM</div>
+          <div class="logo-item">🝔 LOGOIPSUM</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: POWERFUL FEATURES (2x2 Asymmetric glass grid) -->
+  <section class="section-tracle-features" id="features">
+    <div class="tracle-grid-container">
+      
+      <!-- Headline block -->
+      <div class="features-header-block">
+        <span class="feature-small-tag font-mono">Features</span>
+        <h2 class="features-main-title font-oswald scramble-decrypt" data-text="Powerful Features to Simplify your Scheduling">
+          Powerful Features to Simplify your Scheduling
+        </h2>
+        <p class="features-subtitle">
+          Discover how our AI-driven tools can transform your productivity and streamline your everyday.
+        </p>
+      </div>
+
+      <!-- 2x2 asymmetric glassmorphic features layout -->
+      <div class="features-split-grid">
+        
+        <!-- Card 1: AI Automation -->
+        <div class="feature-card glass-card hover-glow col-span-1">
+          <div class="feature-visual-hud ai-agent-visual">
+            <div class="hud-agent-bubble active">
+              <span class="hud-agent-dot"></span>
+              <span class="hud-agent-label font-mono">AI Agent</span>
+            </div>
+            <div class="hud-agent-bubble secondary">
+              <span class="hud-agent-label font-mono">Trigger</span>
+            </div>
+          </div>
+          <div class="feature-info">
+            <h3 class="feature-title font-oswald">AI Automation</h3>
+            <p class="feature-desc">Discover trends and inefficiencies with automated neural algorithms executing background scans.</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Smart Insights (Interactive Checklist task block) -->
+        <div class="feature-card glass-card hover-glow col-span-2">
+          <div class="feature-visual-hud task-list-visual font-mono">
+            <span class="hud-tag">Smart Insights</span>
+            <p class="hud-sub">Get smart insights to spot trends and drive decisions automatically.</p>
+            
+            <div class="interactive-task-items">
+              <div class="task-item active">
+                <span class="task-circle"></span>
+                <span>Create Task</span>
+                <span class="task-plus">+</span>
+              </div>
+              <div class="task-item hovered">
+                <span class="task-circle active"></span>
+                <span>Find Task</span>
+                <span class="task-plus pointer">🖰</span>
+              </div>
+              <div class="task-item completed">
+                <span class="task-circle checked">✓</span>
+                <span>Completed Task</span>
+                <span class="task-plus">+</span>
+              </div>
+            </div>
+          </div>
+          <div class="feature-info">
+            <h3 class="feature-title font-oswald">Smart Insights</h3>
+            <p class="feature-desc">Deploy automated machine learning queues to capture system anomalies, coordinate calendars, and balance staking ratios.</p>
+          </div>
+        </div>
+
+        <!-- Card 3: Generate Prototypes -->
+        <div class="feature-card glass-card hover-glow col-span-2">
+          <div class="feature-visual-hud device-selector-visual font-mono">
+            <div class="device-prompt">Which device are you designing for?</div>
+            <div class="device-options">
+              <span class="device-pill">Mobile</span>
+              <span class="device-pill active">Tablet</span>
+              <span class="device-pill">Web</span>
+            </div>
+          </div>
+          <div class="feature-info">
+            <h3 class="feature-title font-oswald">Generate Prototypes</h3>
+            <p class="feature-desc">Turn abstract metric charts into clean, actionable, multi-device dashboard viewports in seconds.</p>
+          </div>
+        </div>
+
+        <!-- Card 4: Collaboration Tools -->
+        <div class="feature-card glass-card hover-glow col-span-1">
+          <div class="feature-visual-hud collaboration-bubble-visual font-mono">
+            <div class="chat-bubble left">AI: core stake stable</div>
+            <div class="chat-bubble right">SYS: 1.2ms latency</div>
+            <div class="chat-bubble left active">AI: task completed</div>
+          </div>
+          <div class="feature-info">
+            <h3 class="feature-title font-oswald">Collaboration Tools</h3>
+            <p class="feature-desc">Enable dynamic dev squads to calibrate assets cohesively with automated AI communication loops.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4: WORK PROCESS (Input intelligence walkthrough) -->
+  <section class="section-tracle-process" id="workflow">
+    <div class="tracle-grid-container">
+      
+      <!-- Headline block -->
+      <div class="process-header-block">
+        <span class="process-small-tag font-mono">Work Process</span>
+        <h2 class="process-main-title font-oswald scramble-decrypt" data-text="Getting Started with our AI Scheduling">
+          Getting Started with our AI Scheduling
+        </h2>
+        <p class="process-subtitle">
+          See how easy it is to streamline your scheduling and boost your productivity with just a few simple steps.
+        </p>
+      </div>
+
+      <!-- Walkthrough connect card -->
+      <div class="process-steps-wrapper">
+        <div class="process-step-card glass-card font-mono">
+          <div class="step-badge-row">
+            <span class="step-icon">🤖</span>
+            <span class="step-index">Step #1</span>
+          </div>
+          
+          <h3 class="step-card-title font-oswald">Input intelligence</h3>
+          <p class="step-card-desc">
+            Connect your tools and let our AI understand your data patterns, discover hidden relationships, predict outcomes, and act with confidence.
+          </p>
+
+          <div class="step-action-row">
+            <span class="step-tag active">Workflow</span>
+            <span class="step-tag">Optimization</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Form Section for Book Call -->
+  <section class="section-tracle-booking" id="booking">
+    <div class="tracle-grid-container">
+      <div class="booking-wrapper">
+        <div class="booking-card glass-card">
+          <h2 class="booking-title font-oswald scramble-decrypt" data-text="Schedule AI Calibration">
+            Schedule AI Calibration
+          </h2>
+          <p class="booking-subtitle font-mono">SECURE HIGH-LEVEL STRATEGY CALL</p>
+          
+          <form class="booking-form-body font-mono" id="tracle-book-form">
+            <div class="form-group">
+              <label for="book-name">ENTER NAME</label>
+              <input type="text" id="book-name" required placeholder="JAD S.">
+            </div>
+            <div class="form-group">
+              <label for="book-email">ENTER EMAIL</label>
+              <input type="email" id="book-email" required placeholder="JADS@TRACLE.AI">
+            </div>
+            <div class="form-group">
+              <label for="book-slot">PREFERRED DATE & TIME</label>
+              <input type="datetime-local" id="book-slot" required>
+            </div>
+            <button type="submit" class="btn-submit-booking">BOOK STRATEGY CALL</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spaced-Out Dark Footer -->
+  <footer class="tracle-footer" id="pricing">
+    <div class="tracle-grid-container">
+      <div class="footer-top-row">
+        <div class="footer-brand font-oswald">Tracle</div>
+        <p class="footer-desc">
+          Automated A.I. scheduling, zero latency telemetry tracking, and predictive staking intelligence.
+        </p>
+      </div>
+      
+      <div class="footer-bottom-row font-mono" id="testimonials">
+        <p>© 2026 TRACLE A.I. Solutions Inc. All Rights Reserved.</p>
+        <div class="footer-socials">
+          <a href="#">SYSTEM STACK</a>
+          <a href="#">DECISION TELEMETRY</a>
+          <a href="#">PRIVACY CODE</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./tracle.js" type="module"></script>
+</body>
+</html>

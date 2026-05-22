@@ -1,0 +1,1100 @@
+/* ==========================================================================
+   FIONURE CYBERNETIC MECHA HUB (PAGE 6) — PREMIUM MECHANICAL/CYBERHUD CSS
+   ========================================================================== */
+
+/* 1. Cybernetic Mecha Tokens */
+.fionure-active {
+  --mecha-dark: #060608;
+  --mecha-dark-pure: #030304;
+  --mecha-dark-card: #0c0c10;
+  --mecha-accent: #ffffff;
+  --mecha-accent-gray: #8f929d;
+  --mecha-glow-red: #ff3344;
+  --mecha-glow-red-dim: rgba(255, 51, 68, 0.12);
+  --mecha-border: rgba(255, 255, 255, 0.04);
+  --mecha-border-glow: rgba(255, 51, 68, 0.25);
+  
+  --font-headline: 'Oswald', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+
+  background-color: var(--mecha-dark);
+  color: var(--mecha-accent);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Custom Scrollbar for Fionure Theme */
+.fionure-active::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.fionure-active::-webkit-scrollbar-track {
+  background: var(--mecha-dark-pure);
+}
+.fionure-active::-webkit-scrollbar-thumb {
+  background: rgba(255, 51, 68, 0.25);
+  border-radius: 3px;
+}
+.fionure-active::-webkit-scrollbar-thumb:hover {
+  background: var(--mecha-glow-red);
+  box-shadow: 0 0 10px var(--mecha-glow-red);
+}
+
+/* 2. Cybernetic Background Grid Mesh & Scanlines */
+.fionure-active::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.003) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.003) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0.9;
+}
+
+/* Subtle Horizontal Scanlines */
+.fionure-active::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(18, 18, 24, 0) 50%, 
+    rgba(0, 0, 0, 0.15) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 51, 68, 0.015),
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0) 70%,
+    rgba(255, 51, 68, 0.015)
+  );
+  background-size: 100% 4px, 100% 100%;
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0.7;
+}
+
+/* Tactical Container */
+.fionure-active .tactical-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 5%;
+  position: relative;
+  z-index: 5;
+}
+
+/* Custom Cursors overridden for Fionure theme */
+.fionure-active .custom-cursor-dot {
+  background-color: var(--mecha-glow-red);
+  box-shadow: 0 0 10px var(--mecha-glow-red);
+}
+.fionure-active .custom-cursor-ring {
+  border-color: var(--mecha-glow-red);
+}
+.fionure-active .custom-cursor-ring.hovered {
+  background-color: rgba(255, 51, 68, 0.08);
+  border-color: var(--mecha-glow-red);
+  box-shadow: 0 0 25px rgba(255, 51, 68, 0.4);
+}
+
+/* Font Classes */
+.fionure-active .font-oswald {
+  font-family: var(--font-headline);
+  text-transform: uppercase;
+}
+.fionure-active .font-mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+}
+
+/* Cosmic Sparks Canvas Backdrop */
+#fionure-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   3. TECHNICAL HUD NAVBAR
+   ========================================================================== */
+#fionure-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 26px 5%;
+  background: rgba(3, 3, 4, 0.85);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-bottom: 1px solid var(--mecha-border);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#fionure-nav.scrolled {
+  padding: 16px 5%;
+  background: rgba(3, 3, 4, 0.98);
+  border-bottom: 1px solid rgba(255, 51, 68, 0.15);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.logo-pulse-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--mecha-glow-red);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 12px var(--mecha-glow-red);
+  animation: pulse-dot 1.2s ease-in-out infinite alternate;
+}
+
+.fionure-brand-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: var(--mecha-accent);
+}
+
+.nav-left-hud {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-navigators {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#fionure-nav .btn-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--mecha-accent-gray);
+  padding: 6px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+#fionure-nav .btn-nav:hover {
+  background: rgba(255, 51, 68, 0.1);
+  border-color: var(--mecha-glow-red);
+  color: var(--mecha-accent);
+  box-shadow: 0 0 15px rgba(255, 51, 68, 0.2);
+}
+
+#fionure-nav .btn-nav svg {
+  stroke: currentColor;
+}
+
+/* Mid Navigation Links from Mockup */
+.nav-links-mid {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-mid-link {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--mecha-accent-gray);
+  letter-spacing: 0.15em;
+  transition: all 0.25s ease;
+  position: relative;
+  padding: 6px 0;
+}
+
+.nav-mid-link:hover, 
+.nav-mid-link.active {
+  color: var(--mecha-accent);
+}
+
+.nav-mid-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--mecha-glow-red);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px var(--mecha-glow-red);
+}
+
+.nav-mid-link:hover::after,
+.nav-mid-link.active::after {
+  width: 100%;
+}
+
+/* Nav HUD Separators */
+.nav-hud-separator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.3;
+}
+
+.nav-hud-separator .sep-line {
+  width: 25px;
+  height: 1px;
+  background-color: var(--mecha-accent);
+}
+
+.nav-hud-separator .sep-x {
+  font-size: 0.65rem;
+  color: var(--mecha-accent);
+  transform: translateY(-1px);
+}
+
+/* Actions: Year & Hamburger */
+.hud-year {
+  font-size: 0.72rem;
+  color: var(--mecha-glow-red);
+  border: 1px solid var(--mecha-glow-red-dim);
+  padding: 4px 10px;
+  border-radius: 3px;
+  background-color: rgba(255, 51, 68, 0.03);
+}
+
+.hamburger-btn-grid {
+  background: none;
+  border: none;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-dots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  width: 18px;
+  height: 18px;
+}
+
+.grid-dots span {
+  width: 4px;
+  height: 4px;
+  background-color: var(--mecha-accent);
+  border-radius: 50%;
+  transition: all 0.25s ease;
+}
+
+.hamburger-btn-grid:hover .grid-dots span {
+  background-color: var(--mecha-glow-red);
+  box-shadow: 0 0 8px var(--mecha-glow-red);
+}
+
+/* ==========================================================================
+   4. CYBER HERO CONTAINER
+   ========================================================================== */
+.section-fionure-hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 140px 0 60px 0;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  overflow: visible; /* Allows centerpiece overflow */
+}
+
+/* Outline Backdrop Text "FIONURE" */
+.outlined-backdrop-text {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+  text-align: center;
+  width: 100%;
+}
+
+.outlined-backdrop-text .text-main {
+  font-size: clamp(6rem, 15vw, 15rem);
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
+  display: block;
+}
+
+.outlined-backdrop-text .text-echo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(6rem, 15vw, 15rem);
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  color: transparent;
+  display: block;
+  opacity: 0.2;
+}
+
+.outlined-backdrop-text .echo-1 {
+  top: -12px;
+  -webkit-text-stroke: 1px rgba(255, 51, 68, 0.03);
+}
+
+.outlined-backdrop-text .echo-2 {
+  top: 12px;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.02);
+}
+
+/* Core Hero Grid Layout */
+.fionure-hero-container {
+  display: grid;
+  grid-template-columns: 310px 1fr 310px;
+  gap: 30px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 4%;
+  position: relative;
+  z-index: 10;
+}
+
+/* --- Left Column: Info & Stats --- */
+.hero-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 20;
+  background: rgba(12, 12, 16, 0.28); /* Highly transparent premium glass background */
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Crisp subtle border */
+  backdrop-filter: blur(12px); /* Beautiful, highly optimized premium blur */
+  -webkit-backdrop-filter: blur(12px);
+  will-change: transform;
+}
+
+.panel-tag-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.65rem;
+  color: var(--mecha-glow-red);
+  letter-spacing: 0.12em;
+  margin-bottom: 16px;
+}
+
+.protocol-status-light {
+  width: 6px;
+  height: 6px;
+  background-color: var(--mecha-glow-red);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--mecha-glow-red);
+  animation: pulse-dot 1s ease-in-out infinite alternate;
+}
+
+.fionure-hero-title {
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
+.fionure-hero-title .light-accent {
+  color: var(--mecha-accent);
+  display: block;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px var(--mecha-accent);
+}
+
+.fionure-hero-desc {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--mecha-accent-gray);
+  margin-bottom: 28px;
+  font-weight: 300;
+}
+
+/* Diagnostics Values Grid */
+.diagnostics-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  border-top: 1px solid var(--mecha-border);
+  border-bottom: 1px solid var(--mecha-border);
+  padding: 20px 0;
+  margin-bottom: 24px;
+}
+
+.diag-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.68rem;
+}
+
+.diag-label {
+  color: var(--mecha-accent-gray);
+}
+
+.diag-val {
+  color: var(--mecha-accent);
+  font-weight: bold;
+}
+
+.diag-val.ok {
+  color: var(--mecha-glow-red);
+  text-shadow: 0 0 8px rgba(255, 51, 68, 0.4);
+}
+
+/* Plain Slogan Tags Row */
+.bio-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.bio-tag {
+  font-size: 0.6rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--mecha-border);
+  padding: 4px 8px;
+  border-radius: 3px;
+  color: var(--mecha-accent-gray);
+}
+
+/* Pill Calibrator Button */
+.btn-mecha-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--mecha-accent);
+  color: var(--mecha-dark);
+  padding: 14px 24px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--mecha-accent);
+}
+
+.btn-mecha-pill:hover {
+  background: transparent;
+  color: var(--mecha-accent);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+}
+
+.btn-mecha-pill svg {
+  transition: transform 0.4s ease;
+}
+
+.btn-mecha-pill:hover svg {
+  transform: rotate(180deg);
+}
+
+/* --- Center Column: Massive Floating centerpiece image --- */
+.hero-center-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 520px;
+}
+
+/* Chevron arrow overlay controls */
+.btn-mecha-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(6, 6, 8, 0.65);
+  border: 1px solid var(--mecha-border);
+  color: var(--mecha-accent-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 30;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.btn-mecha-arrow:hover {
+  border-color: var(--mecha-glow-red);
+  color: var(--mecha-accent);
+  box-shadow: 0 0 15px rgba(255, 51, 68, 0.25);
+  background: rgba(255, 51, 68, 0.05);
+}
+
+.btn-mecha-arrow.arrow-left {
+  left: -20px;
+}
+
+.btn-mecha-arrow.arrow-right {
+  right: -20px;
+}
+
+/* The giant floating frame (extremely large to dominate backdrop) */
+.fionure-float-frame {
+  position: absolute;
+  left: 55%; /* Shift slightly right to match mecha position in mockup */
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: clamp(1200px, 86vw, 1650px); /* Massive width! */
+  height: clamp(1200px, 100vh, 1650px); /* Massive height, dominating screen! */
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  will-change: transform; /* Hardware acceleration */
+}
+
+/* Glow halo centering */
+.fionure-glow-halo {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(
+    circle, 
+    rgba(255, 51, 68, 0.16) 0%, 
+    rgba(255, 51, 68, 0.04) 45%, 
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(40px);
+  z-index: 1;
+  pointer-events: none;
+  animation: halo-breathing 4s ease-in-out infinite alternate;
+}
+
+/* Centerpiece mecha-crystal image */
+.fionure-hero-img {
+  position: relative;
+  z-index: 3;
+  width: 100%; /* Spans full size of frame */
+  height: 100%; /* Spans full size of frame */
+  object-fit: contain;
+  filter: drop-shadow(0 0 50px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 20px rgba(255, 51, 68, 0.15));
+  pointer-events: auto;
+  will-change: transform; /* Hardware acceleration */
+}
+
+/* --- Right Column: Telemetry list --- */
+.hero-right-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  position: relative;
+  z-index: 20;
+}
+
+.telemetry-hud-card {
+  background: rgba(12, 12, 16, 0.28); /* Highly transparent premium glass background */
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Crisp subtle border */
+  border-radius: 12px;
+  padding: 24px;
+  backdrop-filter: blur(12px); /* Beautiful, highly optimized premium blur */
+  -webkit-backdrop-filter: blur(12px);
+  will-change: transform;
+}
+
+.card-hud-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--mecha-border);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.header-indicator {
+  width: 4px;
+  height: 12px;
+  background-color: var(--mecha-glow-red);
+  box-shadow: 0 0 8px var(--mecha-glow-red);
+}
+
+.card-hud-title {
+  font-size: 0.68rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: var(--mecha-accent);
+}
+
+/* Log list */
+.telemetry-logs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 160px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.telemetry-logs-list::-webkit-scrollbar {
+  width: 3px;
+}
+.telemetry-logs-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1.5px;
+}
+
+.log-entry {
+  font-size: 0.65rem;
+  line-height: 1.4;
+  border-left: 1px solid var(--mecha-border);
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.log-time {
+  color: var(--mecha-glow-red);
+  font-weight: bold;
+}
+
+.log-txt {
+  color: var(--mecha-accent-gray);
+}
+
+/* Channel Node selectors */
+.interactive-node-selectors {
+  background: rgba(12, 12, 16, 0.28); /* Highly transparent premium glass background */
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Crisp subtle border */
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(12px); /* Beautiful, highly optimized premium blur */
+  -webkit-backdrop-filter: blur(12px);
+  will-change: transform;
+}
+
+.selector-title {
+  font-size: 0.62rem;
+  color: var(--mecha-accent-gray);
+  display: block;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.node-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.node-selector-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--mecha-border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.node-selector-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.node-selector-item.active {
+  background: rgba(255, 51, 68, 0.04);
+  border-color: var(--mecha-border-glow);
+}
+
+.node-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--mecha-accent-gray);
+  transition: all 0.25s ease;
+}
+
+.node-selector-item:hover .node-indicator {
+  background-color: var(--mecha-accent);
+}
+
+.node-selector-item.active .node-indicator {
+  background-color: var(--mecha-glow-red);
+  box-shadow: 0 0 8px var(--mecha-glow-red);
+}
+
+.node-name {
+  font-size: 0.65rem;
+  color: var(--mecha-accent-gray);
+  transition: all 0.25s ease;
+}
+
+.node-selector-item:hover .node-name {
+  color: var(--mecha-accent);
+}
+
+.node-selector-item.active .node-name {
+  color: var(--mecha-accent);
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   5. SECTION 2: CORE DETAILS & STATS
+   ========================================================================== */
+.section-fionure-details {
+  padding: 80px 0 100px 0;
+  position: relative;
+  z-index: 10;
+  background-color: var(--mecha-dark-pure);
+  border-top: 1px solid var(--mecha-border);
+}
+
+.fionure-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 50px;
+  align-items: center;
+}
+
+/* Left: Bilingual description panel */
+.frosted-mecha-card {
+  background: rgba(12, 12, 16, 0.28); /* Highly transparent glass background */
+  border: 1px solid var(--mecha-border);
+  border-radius: 16px;
+  padding: 40px;
+  backdrop-filter: blur(10px); /* Performance optimized blur */
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Red indicator highlight tag */
+.frosted-mecha-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--mecha-glow-red);
+  box-shadow: 0 0 15px var(--mecha-glow-red);
+}
+
+.card-header-accent {
+  margin-bottom: 24px;
+}
+
+.card-hud-index {
+  font-size: 0.72rem;
+  color: var(--mecha-glow-red);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.card-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--mecha-accent);
+}
+
+.card-body-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cn-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--mecha-accent);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.en-text {
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--mecha-accent-gray);
+  border-top: 1px solid var(--mecha-border);
+  padding-top: 20px;
+}
+
+/* Right: 2x2 grid of detailed HUD sub-system cards */
+.split-col-right {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.mecha-spec-card {
+  background: rgba(12, 12, 16, 0.45);
+  border: 1px solid var(--mecha-border);
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.mecha-spec-card.hover-glow:hover {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Icon wrap with mechanical brackets */
+.card-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--mecha-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mecha-glow-red);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.mecha-spec-card.hover-glow:hover .card-icon-wrap {
+  background: rgba(255, 51, 68, 0.06);
+  border-color: var(--mecha-border-glow);
+  color: var(--mecha-accent);
+  box-shadow: 0 0 15px rgba(255, 51, 68, 0.2);
+}
+
+/* Corner Bracket Lines */
+.corner-bracket {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border: 1px solid var(--mecha-glow-red);
+  opacity: 0.6;
+}
+.corner-bracket.tl {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+}
+.corner-bracket.tr {
+  top: -1px;
+  right: -1px;
+  border-left: none;
+  border-bottom: none;
+}
+.corner-bracket.bl {
+  bottom: -1px;
+  left: -1px;
+  border-right: none;
+  border-top: none;
+}
+.corner-bracket.br {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
+}
+
+.card-icon-wrap.text-icon {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-hud-code {
+  font-size: 0.68rem;
+  font-weight: bold;
+  color: var(--mecha-accent);
+  letter-spacing: 0.1em;
+}
+
+.card-desc {
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--mecha-accent-gray);
+  font-weight: 300;
+}
+
+/* ==========================================================================
+   6. MECHA FOOTER
+   ========================================================================== */
+.space-footer {
+  background-color: var(--mecha-dark-pure);
+  border-top: 1px solid var(--mecha-border);
+  padding: 40px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  color: var(--mecha-accent-gray);
+  font-family: var(--font-mono);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-socials a {
+  transition: color 0.25s ease;
+}
+
+.footer-socials a:hover {
+  color: var(--mecha-glow-red);
+  text-shadow: 0 0 6px var(--mecha-glow-red);
+}
+
+/* ==========================================================================
+   7. KEYFRAME ANIMATIONS
+   ========================================================================== */
+@keyframes pulse-dot {
+  0% { opacity: 0.35; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes halo-breathing {
+  0% { transform: scale(0.9) rotate(0deg); opacity: 0.8; }
+  100% { transform: scale(1.15) rotate(180deg); opacity: 1; }
+}
+
+/* ==========================================================================
+   8. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .fionure-hero-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    padding-bottom: 40px;
+  }
+  
+  .hero-center-col {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    min-height: 480px;
+  }
+  
+  .fionure-float-frame {
+    width: clamp(950px, 85vw, 1200px);
+    height: clamp(950px, 85vw, 1200px);
+  }
+  
+  .outlined-backdrop-text {
+    top: 35%;
+  }
+
+  .fionure-split-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  #fionure-nav .nav-links-mid,
+  #fionure-nav .nav-hud-separator {
+    display: none;
+  }
+
+  .fionure-hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .hero-center-col {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .btn-mecha-arrow.arrow-left {
+    left: 10px;
+  }
+
+  .btn-mecha-arrow.arrow-right {
+    right: 10px;
+  }
+
+  .outlined-backdrop-text {
+    display: none; /* Hide backing overlays on smaller devices to avoid clutter */
+  }
+}
+
+@media (max-width: 768px) {
+  #fionure-nav {
+    padding: 16px 6%;
+  }
+  
+  #fionure-nav.scrolled {
+    padding: 12px 6%;
+  }
+
+  .section-fionure-hero {
+    padding: 110px 0 40px 0;
+  }
+
+  .fionure-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .frosted-mecha-card {
+    padding: 30px;
+  }
+
+  .split-col-right {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}

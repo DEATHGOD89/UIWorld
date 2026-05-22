@@ -1,0 +1,1038 @@
+/* ==========================================================================
+   NUORBIT CYBER-TEAL SCI-FI STYLE SYSTEM
+   ========================================================================== */
+
+:root {
+  /* HSL Cinematic Teal Theme Colors */
+  --nuo-bg: #050a10;
+  --nuo-cyan: #00f5ff;
+  --nuo-cyan-glow: rgba(0, 245, 255, 0.35);
+  --nuo-cyan-glow-light: rgba(0, 245, 255, 0.08);
+  
+  --nuo-card-bg: rgba(255, 255, 255, 0.01);
+  --nuo-card-border: rgba(255, 255, 255, 0.05);
+  --nuo-card-border-hover: rgba(0, 245, 255, 0.3);
+  
+  --nuo-text-pri: #ffffff;
+  --nuo-text-sec: #aaaaaa;
+  --nuo-text-muted: #4e656d;
+  
+  --font-outfit: 'Outfit', sans-serif;
+  --font-orbitron: 'Orbitron', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+  
+  --nuo-transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base setting scoped to active body */
+body.nuo-active {
+  background-color: var(--nuo-bg) !important;
+  color: var(--nuo-text-pri);
+  font-family: var(--font-outfit);
+  overflow-x: hidden;
+  position: relative;
+  transition: opacity 0.4s ease;
+}
+
+body.nuo-active::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 242, 255, 0.02) 0%, transparent 80%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Cinematic film grain noise texture overlay */
+body.nuo-active::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.015; /* Subtle premium film-grain */
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Custom Neon Cyan Cursor dot/ring */
+body.nuo-active .custom-cursor-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--nuo-cyan);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+body.nuo-active .custom-cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(0, 242, 255, 0.4);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.08s cubic-bezier(0.25, 1, 0.5, 1), width 0.2s, height 0.2s, border-color 0.2s;
+}
+
+/* Cursor Hover states */
+body.nuo-cursor-hovering .custom-cursor-dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--nuo-cyan);
+  box-shadow: 0 0 8px var(--nuo-cyan);
+}
+
+body.nuo-cursor-hovering .custom-cursor-ring {
+  width: 48px;
+  height: 48px;
+  border-color: rgba(0, 242, 255, 0.8);
+  background-color: rgba(0, 242, 255, 0.03);
+}
+
+/* Cosmic Sparks canvas */
+#nuo-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Sweeping Ambient Teal Spotlights */
+.nuo-header-spotlight {
+  position: absolute;
+  top: -15%;
+  width: 70vw;
+  height: 70vw;
+  border-radius: 50%;
+  filter: blur(160px);
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: screen;
+}
+
+.nuo-header-spotlight.spot-teal {
+  left: 15%;
+  background: radial-gradient(circle, var(--nuo-cyan) 0%, transparent 70%);
+  animation: nuoFloatTeal 30s ease-in-out infinite alternate;
+}
+
+.nuo-header-spotlight.spot-dark {
+  right: 15%;
+  background: radial-gradient(circle, #008fa3 0%, transparent 75%);
+  animation: nuoFloatDark 35s ease-in-out infinite alternate;
+}
+
+@keyframes nuoFloatTeal {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.12; }
+  50% { transform: translate(-5%, 10%) scale(1.1); opacity: 0.18; }
+  100% { transform: translate(5%, -5%) scale(0.95); opacity: 0.12; }
+}
+
+@keyframes nuoFloatDark {
+  0% { transform: translate(0, 0) scale(1.05); opacity: 0.15; }
+  50% { transform: translate(8%, -8%) scale(0.95); opacity: 0.08; }
+  100% { transform: translate(-8%, 5%) scale(1.1); opacity: 0.15; }
+}
+
+/* Grid layout constraints */
+.nuo-grid-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4%;
+  position: relative;
+  z-index: 5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   SPACED-OUT NAV NAVIGATOR CAPSULE
+   ========================================================================== */
+#nuo-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 32px 6% 16px;
+  background: linear-gradient(to bottom, rgba(5, 10, 16, 0.85) 0%, rgba(5, 10, 16, 0.4) 50%, transparent 100%);
+  transition: var(--nuo-transition);
+}
+
+#nuo-nav.scrolled {
+  position: fixed;
+  padding: 20px 6% 12px;
+  background: rgba(5, 10, 16, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+#nuo-nav .navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  border: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+}
+
+.nav-left-hud {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-navigators {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 245, 255, 0.02) !important;
+  border: 1px solid rgba(0, 245, 255, 0.15) !important;
+  color: var(--nuo-cyan) !important;
+  padding: 6px 12px !important;
+  border-radius: 4px !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.65rem !important;
+  letter-spacing: 0.08em;
+  font-weight: 700 !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.btn-nav:hover:not(.disabled):not(:disabled) {
+  background-color: var(--nuo-cyan) !important;
+  border-color: var(--nuo-cyan) !important;
+  color: #050a10 !important;
+  box-shadow: 0 0 10px var(--nuo-cyan-glow) !important;
+  transform: translateY(0);
+}
+
+.btn-nav.disabled, .btn-nav:disabled {
+  opacity: 0.15;
+  cursor: not-allowed !important;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+  color: var(--nuo-text-muted) !important;
+}
+
+.nav-logo-capsule {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  font-family: var(--font-orbitron) !important;
+  font-size: 1.35rem;
+  letter-spacing: 0.08em;
+  font-weight: 900;
+  color: #ffffff;
+  user-select: none;
+}
+
+.logo-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--nuo-cyan);
+  box-shadow: 0 0 10px var(--nuo-cyan);
+  animation: logoPulse 2s infinite alternate;
+}
+
+@keyframes logoPulse {
+  0% { transform: scale(0.9); box-shadow: 0 0 6px var(--nuo-cyan); }
+  100% { transform: scale(1.1); box-shadow: 0 0 14px var(--nuo-cyan); }
+}
+
+.nav-links-mid {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.capsule-link {
+  color: var(--nuo-text-sec);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 8px 0;
+  letter-spacing: 0.1em;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  background: transparent !important;
+  border: none !important;
+}
+
+.capsule-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--nuo-cyan);
+  box-shadow: 0 0 8px var(--nuo-cyan);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.capsule-link:hover, .capsule-link.active {
+  color: #ffffff;
+}
+
+.capsule-link:hover::after, .capsule-link.active::after {
+  width: 100%;
+  left: 0;
+}
+
+.btn-join-capsule {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--nuo-cyan);
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-join-capsule:hover {
+  background: rgba(0, 245, 255, 0.08);
+  color: #ffffff;
+  border-color: var(--nuo-cyan);
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   PORTAL INTERACTIVE CENTERPIECE (STATIONARY & HIGH-FIDELITY OVERLAPPING)
+   ========================================================================== */
+.section-nuo-hero {
+  padding: 140px 0 40px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+}
+
+.nuorbit-interactive-centerpiece-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+/* Giant spaced-out headline sitting in background */
+.nuo-hero-title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8.5vw;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-family: var(--font-orbitron);
+  line-height: 1;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.15em;
+  position: relative;
+  z-index: 5;
+  user-select: none;
+}
+
+.nuo-hero-title .letter {
+  background: linear-gradient(180deg, #ffffff 60%, rgba(255, 255, 255, 0.45) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.6));
+}
+
+.portal-placeholder {
+  width: 20vw;
+  height: 20vw;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 -2.5vw; /* Negative margin to let adjacent letters overlap the ring beautifully */
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+/* Center Portal Ring overlapping in foreground */
+.portal-scene-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Background glow blob centered behind the ring */
+.portal-glow-back {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35vw;
+  height: 35vw;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(0, 245, 255, 0.28) 0%, rgba(0, 245, 255, 0.08) 50%, transparent 75%);
+  filter: blur(4vw);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Glowing portal ring with high-fidelity solid white core and cyan glow */
+.portal-ring {
+  width: 18.5vw;
+  height: 18.5vw;
+  border-radius: 50%;
+  border: 6px solid #ffffff; /* Thick, high-fidelity solid white core */
+  background: transparent;
+  box-shadow: 0 0 40px #00f5ff, 
+              0 0 80px rgba(0, 245, 255, 0.6), 
+              inset 0 0 30px rgba(0, 245, 255, 0.5);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  overflow: visible;
+  transition: var(--nuo-transition);
+}
+
+.portal-ring:hover {
+  box-shadow: 0 0 50px #00f5ff, 
+              0 0 100px rgba(0, 245, 255, 0.8), 
+              inset 0 0 40px rgba(0, 245, 255, 0.7);
+  transform: scale(1.03);
+}
+
+/* Concentric spinning dotted indicator rings (Flat 2D HUD radar layout) */
+.portal-ring-dotted {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(0, 245, 255, 0.35);
+  pointer-events: none;
+}
+
+.portal-ring-dotted.d-1 {
+  top: -1.5vw;
+  left: -1.5vw;
+  right: -1.5vw;
+  bottom: -1.5vw;
+  animation: spinRingClockwise 20s linear infinite;
+}
+
+.portal-ring-dotted.d-2 {
+  top: -3vw;
+  left: -3vw;
+  right: -3vw;
+  bottom: -3vw;
+  animation: spinRingCounter 30s linear infinite;
+  opacity: 0.65;
+}
+
+@keyframes spinRingClockwise {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spinRingCounter {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Astronaut graphics mask layout */
+.portal-character-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+.portal-character-img {
+  position: absolute;
+  bottom: -1.5vw;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 122%;
+  width: auto;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(0 0 25px rgba(0, 245, 255, 0.45));
+  z-index: 6;
+  transition: transform 0.4s ease;
+}
+
+/* Hover dynamic scaling */
+.portal-scene-wrapper:hover .portal-character-img {
+  transform: translateX(-50%) scale(1.06);
+  filter: drop-shadow(0 0 35px rgba(0, 245, 255, 0.65));
+}
+
+/* Animated layered smoke/fog atmospheric effects */
+.portal-fog-1 {
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140%;
+  height: 35%;
+  background: radial-gradient(ellipse at center, rgba(0, 245, 255, 0.28) 0%, rgba(0, 245, 255, 0.08) 50%, transparent 80%);
+  filter: blur(1.5vw);
+  pointer-events: none;
+  z-index: 7; /* In front of astronaut */
+  animation: fogPulse 8s ease-in-out infinite alternate;
+}
+
+.portal-fog-2 {
+  position: absolute;
+  bottom: -20%;
+  left: 45%;
+  width: 160%;
+  height: 45%;
+  background: radial-gradient(ellipse at center, rgba(0, 245, 255, 0.15) 0%, transparent 70%);
+  filter: blur(2.5vw);
+  pointer-events: none;
+  z-index: 4; /* Behind astronaut */
+  animation: fogPulse 12s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes fogPulse {
+  0% { transform: translateX(-50%) scale(0.95); opacity: 0.75; }
+  100% { transform: translateX(-48%) scale(1.05); opacity: 1; }
+}
+
+/* ==========================================================================
+   PRIMARY CONTENT DETAIL TEXTS (LEFT-ALIGNED UNDER N U)
+   ========================================================================== */
+.nuorbit-left-block {
+  text-align: left;
+  margin-top: -3.5vw; /* Positioned perfectly under the 'N U' baseline */
+  padding-left: 6.5vw; /* Perfect horizontal alignment with the start of 'N' */
+  max-width: 500px;
+  position: relative;
+  z-index: 10;
+}
+
+.nuo-tagline {
+  font-family: var(--font-orbitron);
+  font-size: 0.9vw;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--nuo-text-sec);
+  margin-bottom: 0.8vw;
+  text-transform: uppercase;
+}
+
+/* Looping typewriter settings */
+.typewriter-loop-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 2vw;
+  margin-bottom: 1.5vw;
+}
+
+.nuo-subtitle {
+  font-size: 1.15vw;
+  color: #fff;
+  line-height: 1.5;
+  text-align: left;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.typing-cursor {
+  font-size: 1.2vw;
+  color: var(--nuo-cyan);
+  margin-left: 2px;
+  font-weight: bold;
+  animation: nuoBlinkCursor 0.8s steps(2, start) infinite;
+}
+
+@keyframes nuoBlinkCursor {
+  to { opacity: 0; }
+}
+
+.nuo-cta-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nuo-cta-link {
+  font-family: var(--font-mono);
+  font-size: 1.1vw;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+.nuo-cta-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  height: 2px;
+  background-color: var(--nuo-cyan);
+  box-shadow: 0 0 6px var(--nuo-cyan);
+  transition: width 0.3s ease;
+}
+
+.nuo-cta-link .arrow {
+  transition: transform 0.3s ease;
+}
+
+.nuo-cta-link:hover {
+  color: var(--nuo-cyan);
+  text-shadow: 0 0 10px rgba(0, 245, 255, 0.4);
+}
+
+.nuo-cta-link:hover::after {
+  width: 100%;
+}
+
+.nuo-cta-link:hover .arrow {
+  transform: translateX(6px);
+}
+
+/* ==========================================================================
+   BOTTOM TELEMETRY & STATS HUD PANEL
+   ========================================================================== */
+.nuorbit-bottom-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 40px;
+  background: rgba(5, 12, 22, 0.75); /* Deep dark premium translucent backdrop */
+  border: 1px solid rgba(0, 245, 255, 0.15); /* Tech-cyan accent border */
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 100px; /* Rounded pill style capsule bar */
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.7), 
+              0 0 40px rgba(0, 245, 255, 0.06), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  z-index: 10;
+  position: relative;
+  margin-bottom: 24px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nuorbit-bottom-hud:hover {
+  border-color: rgba(0, 245, 255, 0.3);
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.7), 
+              0 0 50px rgba(0, 245, 255, 0.12), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.hud-stats-group {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.stat-capsule {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.stat-num {
+  font-family: var(--font-orbitron); /* Custom blocky premium sci-fi numbers */
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.stat-lbl {
+  font-size: 0.62rem;
+  color: var(--nuo-text-sec);
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(0, 245, 255, 0.15); /* Glowing cyan separator */
+}
+
+/* Center Play Video Circle Node */
+.hud-play-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 22px 6px 6px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--nuo-transition);
+}
+
+.play-icon-hub {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0, 245, 255, 0.06);
+  border: 1px solid rgba(0, 245, 255, 0.25);
+  color: var(--nuo-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--nuo-transition);
+  padding-left: 3px; /* Precise visual centering for play triangle */
+}
+
+.play-btn-text {
+  font-size: 0.65rem;
+  color: var(--nuo-text-sec);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.hud-play-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(0, 242, 255, 0.25);
+  transform: scale(1.03);
+}
+
+.hud-play-btn:hover .play-icon-hub {
+  background: var(--nuo-cyan);
+  color: #010a0e;
+  box-shadow: 0 0 12px var(--nuo-cyan-glow);
+}
+
+.hud-play-btn:hover .play-btn-text {
+  color: #fff;
+}
+
+/* Social links row */
+.hud-socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.social-link {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--nuo-text-sec);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+  transition: var(--nuo-transition);
+}
+
+.social-link:hover {
+  border-color: var(--nuo-cyan);
+  color: var(--nuo-cyan);
+  box-shadow: 0 0 8px rgba(0, 242, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   INTERACTIVE CINEMATIC VIDEO MODAL
+   ========================================================================== */
+.nuo-video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(1, 10, 14, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nuo-video-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-glass-container {
+  background: rgba(255, 255, 255, 0.0);
+  border: 1px solid var(--nuo-card-border);
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.8),
+              inset 0 1px 0 rgba(255, 255, 255, 0.04),
+              0 0 50px rgba(0, 242, 255, 0.03);
+  width: 90%;
+  max-width: 640px;
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nuo-video-modal.active .modal-glass-container {
+  transform: scale(1);
+}
+
+.btn-close-modal {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--nuo-text-sec);
+  cursor: pointer;
+  transition: var(--nuo-transition);
+  line-height: 1;
+}
+
+.btn-close-modal:hover {
+  color: var(--nuo-cyan);
+  text-shadow: 0 0 10px var(--nuo-cyan-glow);
+}
+
+.video-placeholder-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+}
+
+.spinning-loader-hub {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(0, 242, 255, 0.08);
+  border-top-color: var(--nuo-cyan);
+  border-radius: 50%;
+  margin-bottom: 24px;
+  animation: modalSpin 1s linear infinite;
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.08);
+}
+
+@keyframes modalSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.video-modal-tag {
+  font-size: 0.65rem;
+  color: var(--nuo-cyan);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.video-modal-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+
+.video-modal-desc {
+  font-size: 0.8rem;
+  color: var(--nuo-text-sec);
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT CONSTRAINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  #nuo-nav {
+    padding: 24px 4% 12px;
+  }
+  .nav-links-mid {
+    gap: 20px;
+  }
+  .nuorbit-left-block {
+    margin-top: -2vw;
+    padding-left: 4%;
+  }
+}
+
+@media (max-width: 912px) {
+  .nav-links-mid {
+    display: none; /* Hide navbar links on tablets to keep layout minimal */
+  }
+  .nuo-hero-title {
+    font-size: 10vw;
+  }
+  .portal-placeholder {
+    width: 24vw;
+    height: 24vw;
+  }
+  .nuorbit-left-block {
+    margin-top: 10px;
+    padding-left: 4%;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .nuo-hero-title {
+    font-size: 11vw;
+    flex-wrap: wrap; /* Let the letters wrap gracefully on mobile viewports */
+    justify-content: center;
+    gap: 0.15em;
+  }
+  .portal-placeholder {
+    width: 32vw;
+    height: 32vw;
+    margin: 2vw 0;
+  }
+  .nuorbit-left-block {
+    text-align: center;
+    padding-left: 0;
+    margin: 30px auto 0;
+    max-width: 100%;
+  }
+  .nuo-tagline {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .typewriter-loop-container {
+    justify-content: center;
+    min-height: 28px;
+  }
+  .nuo-subtitle {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+  .nuo-cta-wrapper {
+    justify-content: center;
+  }
+  .nuo-cta-link {
+    font-size: 0.95rem;
+  }
+  
+  .nuorbit-bottom-hud {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+  .hud-stats-group {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .stat-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-nav {
+    padding: 4px 8px !important;
+    font-size: 0.6rem !important;
+  }
+  .btn-join-capsule {
+    padding: 8px 16px;
+    font-size: 0.7rem;
+  }
+  .nuo-hero-title {
+    font-size: 14vw;
+  }
+  .portal-placeholder {
+    width: 40vw;
+    height: 40vw;
+  }
+  .hud-stats-group {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  .stat-capsule {
+    align-items: center;
+  }
+  .stat-num {
+    font-size: 1.25rem;
+  }
+}

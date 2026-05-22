@@ -1,0 +1,965 @@
+/* ==========================================================================
+   RAZE AVANT-GARDE CYBER-FASHION MODELING AGENCY (PAGE 7) — STYLE SHEET
+   ========================================================================== */
+
+/* 1. Cyber-Fashion Design Tokens */
+.raze-active {
+  --raze-bg: #030304;
+  --raze-bg-card: #09090b;
+  --raze-accent-white: #ffffff;
+  --raze-accent-muted: #88888b;
+  --raze-glow-pink: #d946ef;
+  --raze-glow-purple: #8b5cf6;
+  --raze-glass-bg: rgba(255, 255, 255, 0.015);
+  --raze-glass-border: rgba(255, 255, 255, 0.05);
+  
+  --font-headline: 'Oswald', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+
+  background-color: var(--raze-bg);
+  color: var(--raze-accent-white);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Custom Scrollbar for Raze Theme */
+.raze-active::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.raze-active::-webkit-scrollbar-track {
+  background: var(--raze-bg);
+}
+.raze-active::-webkit-scrollbar-thumb {
+  background: rgba(217, 70, 239, 0.25);
+  border-radius: 3px;
+}
+.raze-active::-webkit-scrollbar-thumb:hover {
+  background: var(--raze-glow-pink);
+  box-shadow: 0 0 10px var(--raze-glow-pink);
+}
+
+/* Custom Cursor overridden for Raze Theme */
+.raze-active .custom-cursor-dot {
+  background-color: var(--raze-glow-pink);
+  box-shadow: 0 0 10px var(--raze-glow-pink);
+}
+.raze-active .custom-cursor-ring {
+  border-color: var(--raze-glow-pink);
+}
+.raze-active .custom-cursor-ring.hovered {
+  background-color: rgba(217, 70, 239, 0.06);
+  border-color: var(--raze-glow-pink);
+  box-shadow: 0 0 25px rgba(217, 70, 239, 0.4);
+}
+
+/* Font helpers */
+.raze-active .font-oswald {
+  font-family: var(--font-headline);
+  text-transform: uppercase;
+}
+.raze-active .font-mono {
+  font-family: var(--font-mono);
+  letter-spacing: 0.05em;
+}
+
+/* Technical Dashed Grid lines spanning layout (Mockup Grid) */
+.grid-overlay-line {
+  position: fixed;
+  top: 0;
+  width: 1px;
+  height: 100vh;
+  border-left: 1px dashed rgba(255, 255, 255, 0.04);
+  z-index: 1;
+  pointer-events: none;
+}
+.col-line-1 { left: 26%; }
+.col-line-2 { left: 50%; }
+.col-line-3 { left: 74%; }
+
+/* Grid container to restrict layout widths */
+.raze-grid-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 5%;
+  position: relative;
+  z-index: 5;
+}
+
+/* Cosmic canvas absolute placement */
+#raze-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   2. SPACE-FASHION CAPSULE NAVBAR
+   ========================================================================== */
+#raze-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 30px 5%;
+  background: transparent;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-bottom: none;
+}
+
+#raze-nav.scrolled {
+  padding: 16px 5%;
+  background: rgba(3, 3, 4, 0.85);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.raze-active .navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Left Capsule links combination */
+.nav-left-hud {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Left pill: Home, About, Services, Hiring from Mockup */
+.nav-capsule-links {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 8px 10px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.capsule-link {
+  color: var(--raze-accent-muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 6px 16px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.capsule-link:hover {
+  color: var(--raze-accent-white);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.capsule-link.active {
+  color: #000000;
+  background: var(--raze-accent-white);
+  font-weight: 600;
+}
+
+/* Nav page routing capsule buttons */
+.nav-navigators {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 40px;
+  color: var(--raze-accent-white);
+  font-size: 0.68rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-nav:hover:not(.disabled) {
+  background: rgba(217, 70, 239, 0.08);
+  border-color: var(--raze-glow-pink);
+  color: var(--raze-accent-white);
+  box-shadow: 0 0 15px rgba(217, 70, 239, 0.2);
+}
+
+.btn-nav.disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Right Capsule: Become A Member & Avatar */
+.nav-member-capsule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 8px 10px 8px 20px;
+  border-radius: 40px;
+  color: var(--raze-accent-white);
+  font-size: 0.72rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-member-capsule:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--raze-accent-white);
+}
+
+.nav-avatar-icon {
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--raze-accent-white);
+}
+
+/* ==========================================================================
+   3. RAZE CYBER-FASHION HERO DISPLAY
+   ========================================================================== */
+.section-raze-hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 5% 40px 5%;
+  z-index: 3;
+}
+
+/* Background Ambient Glow Cone behind the figure */
+.raze-glow-cone {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vh;
+  height: 80vh;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle, 
+    rgba(217, 70, 239, 0.16) 0%, 
+    rgba(139, 92, 246, 0.04) 45%, 
+    transparent 70%
+  );
+  filter: blur(40px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Giant Futuristic outline Stencil Backdrop Logo "RAZE" */
+.raze-backdrop-logo {
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15vw;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4);
+  opacity: 0.22;
+  z-index: 2;
+  pointer-events: none;
+  text-align: center;
+  width: 100%;
+}
+
+/* Centerpiece Container holds stationary image and floated button */
+.raze-centerpiece-container {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 680px;
+  height: 86vh;
+  z-index: 3;
+  pointer-events: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* COMPLETELY STILL CENTERPIECE IMAGE (As per user strict request) */
+.raze-hero-img {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 0 50px rgba(217, 70, 239, 0.15));
+}
+
+/* Interactive Floating Sing Up stacked button centered in midground */
+.floating-signup-btn {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--raze-accent-white);
+  font-size: 0.65rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 255, 255, 0.05);
+  z-index: 10;
+}
+
+.floating-signup-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--raze-glow-pink);
+  color: var(--raze-accent-white);
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 0 25px rgba(217, 70, 239, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.stack-letter {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.stack-letter.gap {
+  height: 4px;
+}
+
+/* ==========================================================================
+   4. ASYMMETRICAL FOREGROUND HERO OVERLAYS
+   ========================================================================== */
+.raze-hero-overlay-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 26% 48% 26%;
+  pointer-events: none; /* Let clicks pass to centerpiece buttons */
+  padding: 0 5%;
+  z-index: 5;
+}
+
+/* Left Sidebar and typing slogan content */
+.hero-col-left {
+  grid-column: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 12vh;
+  pointer-events: auto; /* Active elements inside are clickable */
+}
+
+.hero-slogan-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  max-width: 290px;
+}
+
+.drop-cap {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 0.85;
+  color: var(--raze-accent-white);
+  margin-top: 2px;
+}
+
+.typing-loop-container {
+  flex: 1;
+}
+
+.typing-text-wrapper {
+  font-size: 0.82rem;
+  color: var(--raze-accent-muted);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.typing-cursor {
+  font-weight: 900;
+  color: var(--raze-glow-pink);
+  animation: cursorBlink 0.9s infinite alternate;
+}
+
+@keyframes cursorBlink {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Floating social indicators on the left line edge */
+.hero-social-sidebar {
+  position: absolute;
+  left: 0;
+  bottom: 30vh;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  transform: translateX(-50%); /* Center on the boundary line */
+  z-index: 10;
+}
+
+.social-icon-link {
+  width: 26px;
+  height: 26px;
+  background: var(--raze-bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--raze-accent-muted);
+  font-size: 0.72rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon-link:hover {
+  color: var(--raze-glow-pink);
+  border-color: var(--raze-glow-pink);
+  box-shadow: 0 0 10px rgba(217, 70, 239, 0.3);
+  transform: scale(1.1);
+}
+
+/* Right Column Scroll explorer widget */
+.hero-col-right {
+  grid-column: 3;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 12vh;
+}
+
+.scroll-explore-prompt {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transform: rotate(90deg) translateY(-20px);
+  transform-origin: right bottom;
+  color: var(--raze-accent-muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.scroll-txt {
+  white-space: nowrap;
+}
+
+.scroll-arrow-down {
+  transform: rotate(-90deg); /* Adjust pointing down relative to rotation */
+  color: var(--raze-glow-pink);
+  animation: arrowPulse 1.6s infinite ease-in-out;
+}
+
+@keyframes arrowPulse {
+  0%, 100% { transform: rotate(-90deg) translateX(0); }
+  50% { transform: rotate(-90deg) translateX(6px); }
+}
+
+/* ==========================================================================
+   5. WHO WE ARE SECTION (Asymmetric Columns & 100% Transparent Cards)
+   ========================================================================== */
+.section-raze-about {
+  padding: 120px 0;
+  position: relative;
+  z-index: 5;
+  background: linear-gradient(to bottom, transparent, rgba(3, 3, 4, 0.8));
+}
+
+.about-asymmetric-columns {
+  display: grid;
+  grid-template-columns: 21% 48% 31%;
+  gap: 4%;
+  align-items: flex-start;
+}
+
+.about-title-col {
+  grid-column: 1;
+}
+
+.about-headline {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: var(--raze-accent-white);
+  margin: 0;
+}
+
+.about-desc-col {
+  grid-column: 2;
+}
+
+.about-slogan-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.about-text {
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: var(--raze-accent-muted);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+/* 100% Transparent Premium Glass Card (Fully transparent as requested) */
+.about-card-col {
+  grid-column: 3;
+}
+
+.transparent-spec-card {
+  background: rgba(255, 255, 255, 0.01) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  padding: 34px;
+  border-radius: 12px;
+  box-shadow: none !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.transparent-spec-card:hover {
+  border-color: rgba(217, 70, 239, 0.25) !important;
+  box-shadow: 0 0 30px rgba(217, 70, 239, 0.08) !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+.transparent-spec-card .card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 28px 0;
+  color: var(--raze-accent-white);
+}
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-signin-capsule {
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--raze-accent-white);
+  border: 1px solid var(--raze-accent-white);
+  color: #000000;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 40px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-signin-capsule:hover {
+  background: transparent;
+  color: var(--raze-accent-white);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.card-action-icon-wrapper {
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--raze-accent-white);
+  transition: all 0.3s ease;
+}
+
+.transparent-spec-card:hover .card-action-icon-wrapper {
+  border-color: var(--raze-glow-pink);
+  color: var(--raze-glow-pink);
+  box-shadow: 0 0 10px rgba(217, 70, 239, 0.3);
+}
+
+/* ==========================================================================
+   6. RAZE SUB-BANNER GRID & FOOTER SHOWCASE
+   ========================================================================== */
+.section-raze-banner {
+  padding: 100px 0;
+  position: relative;
+  z-index: 5;
+}
+
+/* Asymmetric split banner card */
+.sub-banner-split-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.005);
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin-bottom: 120px;
+}
+
+.banner-title-card {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.banner-index {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  font-size: 0.8rem;
+  color: var(--raze-glow-pink);
+  font-weight: 700;
+}
+
+.banner-headline-wrap {
+  margin-bottom: 24px;
+}
+
+.banner-main-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 12px 0;
+  color: var(--raze-accent-white);
+  max-width: 400px;
+}
+
+.pink-underline-accent {
+  width: 80px;
+  height: 4px;
+  background-color: var(--raze-glow-pink);
+}
+
+.banner-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--raze-accent-muted);
+  margin: 0;
+}
+
+/* Right half portrait */
+.banner-portrait-card {
+  position: relative;
+  height: 100%;
+  min-height: 400px;
+  background: #09090b;
+}
+
+.banner-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Bottom headline block */
+.banner-bottom-row {
+  position: relative;
+  margin-bottom: 120px;
+}
+
+.bottom-slogan-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 800px;
+  margin-bottom: 60px;
+}
+
+.bottom-main-headline {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--raze-accent-white);
+  margin: 0;
+}
+
+/* Bottom centered glowing cyber head container */
+.bottom-glowing-showcase {
+  position: relative;
+  max-width: 580px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.avatar-glow-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle, 
+    rgba(139, 92, 246, 0.2) 0%, 
+    rgba(217, 70, 239, 0.05) 50%, 
+    transparent 80%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.bottom-showcase-avatar {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 35px rgba(217, 70, 239, 0.25));
+  z-index: 1;
+}
+
+/* ==========================================================================
+   7. FORM & SIGN UP SECTION
+   ========================================================================== */
+.section-raze-signup {
+  padding: 100px 5%;
+  background: linear-gradient(to top, rgba(9, 9, 11, 0.95), transparent);
+  position: relative;
+  z-index: 5;
+}
+
+.signup-container {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.signup-card {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  padding: 46px;
+  border-radius: 12px;
+}
+
+.signup-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 8px 0;
+  color: var(--raze-accent-white);
+}
+
+.signup-subtitle {
+  font-size: 0.68rem;
+  text-align: center;
+  color: var(--raze-glow-pink);
+  letter-spacing: 0.15em;
+  margin: 0 0 36px 0;
+  font-weight: 700;
+}
+
+.signup-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--raze-accent-muted);
+}
+
+.form-group input {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 18px;
+  border-radius: 4px;
+  color: var(--raze-accent-white);
+  font-family: inherit;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--raze-glow-pink);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 15px rgba(217, 70, 239, 0.15);
+}
+
+.btn-submit-signup {
+  margin-top: 12px;
+  padding: 14px;
+  background: var(--raze-glow-pink);
+  border: 1px solid var(--raze-glow-pink);
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-submit-signup:hover {
+  background: transparent;
+  color: var(--raze-glow-pink);
+  box-shadow: 0 0 20px rgba(217, 70, 239, 0.35);
+}
+
+/* ==========================================================================
+   8. SPACE-FOOTER
+   ========================================================================== */
+.space-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 40px 0;
+  background: #030304;
+  position: relative;
+  z-index: 5;
+}
+
+.footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 0.72rem;
+  color: var(--raze-accent-muted);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-socials a {
+  color: var(--raze-accent-muted);
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: var(--raze-glow-pink);
+}
+
+/* ==========================================================================
+   9. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .grid-overlay-line { display: none; }
+  
+  .raze-hero-overlay-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+    position: relative;
+    padding-top: 40px;
+  }
+  
+  .hero-col-left {
+    grid-column: 1;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+    margin-top: 70vh;
+  }
+  
+  .hero-slogan-block {
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-social-sidebar {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    transform: none;
+    margin-top: 30px;
+  }
+  
+  .hero-col-right {
+    display: none;
+  }
+  
+  .about-asymmetric-columns {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .about-headline {
+    text-align: center;
+  }
+  
+  .sub-banner-split-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .banner-title-card {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-capsule-links {
+    display: none;
+  }
+  
+  .btn-nav span {
+    display: none; /* Icon only on mobile */
+  }
+  
+  .raze-centerpiece-container {
+    height: 60vh;
+  }
+  
+  .bottom-main-headline {
+    font-size: 2.2rem;
+  }
+}

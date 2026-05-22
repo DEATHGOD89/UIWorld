@@ -1,0 +1,1496 @@
+/* ==========================================================================
+   THE DIVISION — PREMIUM TACTICAL THEME STYLESHEET
+   ========================================================================== */
+
+/* Variables and Theme Tokens for The Division Page */
+.division-active {
+  --div-orange: #f08200;
+  --div-orange-glow: rgba(240, 130, 0, 0.45);
+  --div-orange-dim: rgba(240, 130, 0, 0.15);
+  --div-dark-bg: #070709;
+  --div-charcoal: #0e0e12;
+  --div-card-bg: rgba(14, 14, 18, 0.85);
+  --div-border-color: rgba(255, 255, 255, 0.08);
+  --div-yellow: #e5a93b;
+  --div-text-gray: #a0a5ad;
+  --div-text-white: #ffffff;
+  
+  --font-headline: 'Oswald', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+  
+  background-color: var(--div-dark-bg);
+  color: var(--div-text-white);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Custom Dotted Military Grid Overlay */
+.division-active::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(rgba(240, 130, 0, 0.005) 1px, transparent 1px);
+  background-size: 24px 24px, 100% 4px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* General Layout Elements */
+.division-active .tactical-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+.division-active .font-oswald {
+  font-family: var(--font-headline);
+}
+
+/* Custom Cursor Orange-Themed Glows */
+.division-active .custom-cursor-dot {
+  background-color: var(--div-orange);
+  box-shadow: 0 0 10px var(--div-orange-glow);
+}
+
+.division-active .custom-cursor-ring {
+  border-color: var(--div-orange);
+}
+
+.division-active .custom-cursor-ring.hovered {
+  border-color: var(--div-orange);
+  background-color: rgba(240, 130, 0, 0.08);
+  box-shadow: 0 0 30px var(--div-orange-glow);
+  width: 58px;
+  height: 58px;
+}
+
+/* Ember Particle Canvas Overlay */
+#ember-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ==========================================================================
+   GRITTY TACTICAL NAVBAR
+   ========================================================================== */
+#division-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 24px 4%;
+  background: linear-gradient(to bottom, rgba(7, 7, 9, 0.95) 40%, rgba(7, 7, 9, 0.8) 80%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(240, 130, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#division-nav.scrolled {
+  padding: 14px 4%;
+  background: rgba(7, 7, 9, 0.98);
+  border-bottom: 1px solid rgba(240, 130, 0, 0.2);
+}
+
+.logo-and-menu {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Hamburger button styled for tactical feel */
+.hamburger-btn-gritty {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.hamburger-btn-gritty span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--div-text-white);
+  transition: all 0.3s ease;
+}
+
+.hamburger-btn-gritty span:nth-child(2) {
+  width: 75%;
+}
+
+.hamburger-btn-gritty:hover span {
+  background-color: var(--div-orange);
+}
+
+.hamburger-btn-gritty:hover span:nth-child(2) {
+  width: 100%;
+}
+
+/* Watch Glow Icon animation */
+.orange-watch-icon {
+  filter: drop-shadow(0 0 6px var(--div-orange-glow));
+}
+
+.watch-center-pulse {
+  animation: pulse-watch-core 2s infinite ease-in-out;
+}
+
+@keyframes pulse-watch-core {
+  0%, 100% { opacity: 0.4; r: 1.5px; }
+  50% { opacity: 1; r: 2.5px; }
+}
+
+.division-brand-title {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  color: var(--div-text-white);
+}
+
+.division-brand-title .accent-orange {
+  color: var(--div-orange);
+  text-shadow: 0 0 10px var(--div-orange-glow);
+  font-weight: 800;
+}
+
+/* Middle Navigation Links */
+.nav-links-mid {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-mid-link {
+  font-family: var(--font-headline);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--div-text-gray);
+  padding: 6px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-mid-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--div-orange);
+  box-shadow: 0 0 8px var(--div-orange-glow);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-mid-link:hover, 
+.nav-mid-link.active {
+  color: var(--div-text-white);
+}
+
+.nav-mid-link:hover::after,
+.nav-mid-link.active::after {
+  width: 100%;
+}
+
+/* Navigation Buttons (Prev / Next) styling for multi-page shell */
+.division-nav .nav-navigators {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#division-nav .btn-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--div-text-gray);
+  padding: 8px 16px;
+  font-family: var(--font-headline);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  border-radius: 0px; /* Gritty blocky theme */
+  clip-path: polygon(0 0, 92% 0, 100% 30%, 100% 100%, 8% 100%, 0 70%);
+  transition: all 0.25s ease;
+}
+
+#division-nav .btn-nav:hover {
+  background: var(--div-orange-dim);
+  border-color: var(--div-orange);
+  color: var(--div-text-white);
+  box-shadow: 0 0 12px var(--div-orange-glow);
+  transform: translateY(-1px);
+}
+
+#division-nav .btn-nav.btn-next.disabled {
+  opacity: 0.25;
+  pointer-events: none;
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.04) !important;
+  color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Play Now Pill Button */
+.btn-play-now {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--div-orange);
+  border: 1px solid var(--div-orange);
+  color: #000;
+  padding: 9px 20px;
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  clip-path: polygon(0 0, 90% 0, 100% 35%, 100% 100%, 10% 100%, 0 65%);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px var(--div-orange-glow);
+}
+
+.btn-play-now:hover {
+  background: transparent;
+  color: var(--div-orange);
+  box-shadow: 0 0 25px var(--div-orange-glow);
+  transform: scale(1.03);
+}
+
+.btn-play-now svg {
+  transition: transform 0.3s ease;
+}
+
+.btn-play-now:hover svg {
+  transform: translateX(4px);
+}
+
+@media (max-width: 992px) {
+  .nav-links-mid {
+    display: none; /* Hide middle links on smaller screens */
+  }
+}
+
+/* ==========================================================================
+   HERO BACKDROP & INTENSITY
+   ========================================================================== */
+.division-hero-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.division-hero-backdrop .backdrop-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center 30%;
+  filter: brightness(0.4) contrast(1.1);
+  transform: scale(1.02);
+  animation: slow-zoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes slow-zoom {
+  0% { transform: scale(1.02) translateY(0); }
+  100% { transform: scale(1.08) translateY(-10px); }
+}
+
+.division-hero-backdrop .backdrop-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(to bottom, transparent 40%, var(--div-dark-bg) 95%),
+    radial-gradient(circle, transparent 20%, rgba(7, 7, 9, 0.9) 90%);
+}
+
+.division-hero-backdrop .backdrop-orange-flare {
+  position: absolute;
+  bottom: -15%;
+  right: -10%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(240, 130, 0, 0.15) 0%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   HERO SECTION CONTENT
+   ========================================================================== */
+.section-division-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 60px 0;
+  position: relative;
+  z-index: 5;
+}
+
+.hero-tactical-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4%;
+  width: 100%;
+}
+
+.sub-brand-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+.sub-brand-watch {
+  filter: drop-shadow(0 0 4px var(--div-orange-glow));
+}
+
+.sub-brand-text {
+  font-family: var(--font-headline);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  color: var(--div-text-gray);
+}
+
+.sub-brand-text .white-text {
+  color: var(--div-text-white);
+  font-weight: 700;
+}
+
+/* Bold Slogan Layout */
+.tactical-slogan {
+  font-family: var(--font-headline);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  color: var(--div-text-white);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.tactical-slogan .highlight-orange {
+  color: var(--div-orange);
+  text-shadow: 0 0 20px var(--div-orange-glow);
+}
+
+.tactical-description {
+  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+  line-height: 1.7;
+  max-width: 650px;
+  color: var(--div-text-gray);
+  margin-bottom: 50px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Scroll Down tactical indicator */
+.scroll-down-tactical {
+  display: inline-flex;
+}
+
+.btn-scroll-down {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-headline);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--div-text-gray);
+  transition: all 0.3s ease;
+  padding: 8px 0;
+  position: relative;
+}
+
+.btn-scroll-down svg {
+  animation: jump-down 2s infinite ease-in-out;
+}
+
+@keyframes jump-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+.btn-scroll-down:hover {
+  color: var(--div-orange);
+  text-shadow: 0 0 10px var(--div-orange-glow);
+}
+
+/* ==========================================================================
+   SECTION 2: TACTICAL OVERVIEW GRID
+   ========================================================================== */
+.section-tactical-overview {
+  padding: 100px 0;
+  position: relative;
+  z-index: 5;
+  background-color: var(--div-dark-bg);
+}
+
+.overview-grid-layout {
+  display: grid;
+  grid-template-columns: 4.5fr 7.5fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Skull Free Trial card yellow block */
+.tactical-card.play-free-card {
+  background: #111115;
+  border: 1px solid var(--div-border-color);
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4/5;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tactical-card.play-free-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--div-yellow);
+}
+
+.tactical-card.play-free-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  border-color: rgba(240, 130, 0, 0.2);
+}
+
+.skull-img-wrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #1a1a24 0%, #0c0c10 80%);
+  padding: 30px;
+  position: relative;
+}
+
+.skull-graphic-img {
+  max-height: 80%;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.7));
+  transition: transform 0.5s ease;
+}
+
+.tactical-card.play-free-card:hover .skull-graphic-img {
+  transform: scale(1.05) rotate(1deg);
+}
+
+.play-free-banner {
+  background-color: var(--div-yellow);
+  padding: 24px;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.play-free-banner .yellow-tag {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.free-sub-details {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-headline);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+/* Right Column Muerte cinematic neon street + Overview text */
+.overview-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.cinematic-photo-card {
+  height: 250px;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+    url('./assets/division_taxi.png') no-repeat center center;
+  background-size: cover;
+  border: 1px solid var(--div-border-color);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.cinematic-photo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 40%, rgba(7, 7, 9, 0.9) 100%);
+  pointer-events: none;
+}
+
+/* Neon Glow Muerte */
+.muerte-neon-glow {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ff2a5f;
+  text-transform: uppercase;
+  z-index: 2;
+  text-shadow: 
+    0 0 5px #fff,
+    0 0 10px #ff2a5f,
+    0 0 20px #ff2a5f,
+    0 0 40px #ff2a5f,
+    0 0 80px rgba(255, 42, 95, 0.6);
+  animation: flicker-neon 4s infinite alternate;
+}
+
+@keyframes flicker-neon {
+  0%, 100% { opacity: 1; }
+  41% { opacity: 1; }
+  42% { opacity: 0.85; }
+  43% { opacity: 0.95; }
+  45% { opacity: 0.3; }
+  46% { opacity: 0.9; }
+  47% { opacity: 0.2; }
+  48% { opacity: 1; }
+  85% { opacity: 1; }
+  86% { opacity: 0.9; }
+  88% { opacity: 0.4; }
+  89% { opacity: 0.95; }
+}
+
+.photo-card-glow-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 50px rgba(240, 130, 0, 0.15);
+  pointer-events: none;
+}
+
+/* Overview Text Block */
+.overview-text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.overview-section-title {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 0.15em;
+  color: var(--div-orange);
+  text-shadow: 0 0 8px var(--div-orange-glow);
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.overview-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--div-orange);
+}
+
+.overview-desc-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--div-text-gray);
+}
+
+/* Distressed grunge border button */
+.btn-read-more-grunge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  background: transparent;
+  border: 1.5px solid var(--div-orange);
+  color: var(--div-orange);
+  font-family: var(--font-headline);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  position: relative;
+  clip-path: polygon(0 0, 93% 0, 100% 30%, 100% 100%, 7% 100%, 0 70%);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 0 var(--div-orange-glow);
+}
+
+.btn-read-more-grunge:hover {
+  background: var(--div-orange);
+  color: #000;
+  box-shadow: 0 0 20px var(--div-orange-glow);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 992px) {
+  .overview-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .tactical-card.play-free-card {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================================================
+   SECTION 3: TACTICAL SPLIT FEATURES
+   ========================================================================== */
+.section-tactical-features {
+  padding: 60px 0 100px 0;
+  background-color: var(--div-dark-bg);
+  position: relative;
+  z-index: 5;
+}
+
+.features-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+/* Video Card overlay */
+.featured-video-panel {
+  height: 380px;
+  background: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('./assets/division_taxi.png') no-repeat center center;
+  background-size: cover;
+  border: 1px solid var(--div-border-color);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.featured-video-panel:hover {
+  border-color: var(--div-orange);
+}
+
+.video-overlay-text {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: #fff;
+  opacity: 0.8;
+  z-index: 2;
+}
+
+.btn-play-video-overlay {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(240, 130, 0, 0.95);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px var(--div-orange-glow);
+  z-index: 2;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding-left: 5px; /* Offset for visual alignment of triangle */
+}
+
+.featured-video-panel:hover .btn-play-video-overlay {
+  transform: scale(1.15);
+  background: #ffffff;
+  color: var(--div-orange);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+.video-panel-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 60px rgba(0,0,0,0.8);
+  pointer-events: none;
+}
+
+.finding-way-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.feature-block-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--div-text-white);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.feature-block-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--div-text-gray);
+}
+
+/* Right Side: Kneeling Soldier Layout */
+.last-stand-soldier-card {
+  height: 100%;
+  min-height: 550px;
+  border: 1px solid var(--div-border-color);
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s ease;
+}
+
+.last-stand-soldier-card:hover {
+  border-color: rgba(240, 130, 0, 0.25);
+}
+
+.vertical-soldier-tag {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  z-index: 10;
+  font-family: var(--font-headline);
+  line-height: 1;
+}
+
+.vertical-soldier-tag .vertical-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--div-orange);
+  text-shadow: 0 0 10px var(--div-orange-glow);
+}
+
+.vertical-soldier-tag .vertical-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #fff;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+.soldier-img-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: right center;
+  filter: contrast(1.1) brightness(0.65);
+  transition: transform 0.8s ease;
+}
+
+.last-stand-soldier-card:hover .soldier-img-bg {
+  transform: scale(1.04);
+}
+
+/* Expansion Sidebar Layout */
+.expansion-selectors-sidebar {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: rgba(7, 7, 9, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px 12px;
+  max-width: 180px;
+}
+
+.arrow-up-gritty, 
+.arrow-down-gritty {
+  color: var(--div-text-gray);
+  padding: 6px;
+  transition: all 0.2s ease;
+}
+
+.arrow-up-gritty:hover, 
+.arrow-down-gritty:hover {
+  color: var(--div-orange);
+  transform: translateY(-2px);
+}
+
+.arrow-down-gritty:hover {
+  transform: translateY(2px);
+}
+
+.selector-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.selector-item {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--div-text-gray);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  padding: 4px;
+}
+
+.selector-item:hover, 
+.selector-item.active {
+  color: var(--div-orange);
+}
+
+.selector-item.active {
+  font-weight: 700;
+  border-left: 2.5px solid var(--div-orange);
+  padding-left: 8px;
+}
+
+.soldier-card-tactical-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(7, 7, 9, 0.8) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+@media (max-width: 992px) {
+  .features-split-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .last-stand-soldier-card {
+    min-height: 480px;
+  }
+}
+
+/* ==========================================================================
+   SECTION 4: INTERACTIVE KEY FEATURES & TABS
+   ========================================================================== */
+.section-tactical-tabs {
+  padding: 80px 0;
+  background-color: var(--div-charcoal);
+  border-top: 1px solid var(--div-border-color);
+  border-bottom: 1px solid var(--div-border-color);
+  position: relative;
+  z-index: 5;
+}
+
+.tactical-tabs-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 16px;
+  margin-bottom: 40px;
+}
+
+.tabs-buttons-list {
+  display: flex;
+  gap: 16px;
+}
+
+/* Distressed button tab */
+.btn-tab-gritty {
+  padding: 12px 24px;
+  font-family: var(--font-headline);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--div-text-gray);
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  clip-path: polygon(0 0, 92% 0, 100% 25%, 100% 100%, 8% 100%, 0 75%);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-tab-gritty::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--div-orange);
+  transition: width 0.3s ease;
+}
+
+.btn-tab-gritty:hover {
+  color: var(--div-text-white);
+  border-color: rgba(240, 130, 0, 0.25);
+  background-color: rgba(240, 130, 0, 0.03);
+}
+
+.btn-tab-gritty.active {
+  color: #000;
+  background-color: var(--div-orange);
+  border-color: var(--div-orange);
+  font-weight: 700;
+  box-shadow: 0 4px 15px var(--div-orange-glow);
+}
+
+.btn-tab-gritty.active::before {
+  width: 100%;
+}
+
+.bordered-features-title {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  color: var(--div-orange);
+  border: 1.5px solid var(--div-orange);
+  padding: 6px 16px;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px var(--div-orange-glow);
+}
+
+/* Tab content layout */
+.tab-content-panel {
+  display: none;
+  animation: tab-fade-in 0.6s ease forwards;
+}
+
+.tab-content-panel.active {
+  display: block;
+}
+
+@keyframes tab-fade-in {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-explanation-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--div-text-gray);
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+
+/* Social outports style */
+.tactical-social-outlets {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.social-outlet-item {
+  width: 44px;
+  height: 44px;
+  border-radius: 0px; /* blocky */
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: all 0.25s ease;
+}
+
+.social-outlet-item:hover {
+  background: var(--div-orange-dim);
+  border-color: var(--div-orange);
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* PVE Mission carousel slider */
+.pve-mission-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carousel-control-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 0px;
+  background: rgba(7, 7, 9, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--div-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 10;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-control-btn:hover {
+  background: var(--div-orange);
+  color: #000;
+  border-color: var(--div-orange);
+  box-shadow: 0 0 15px var(--div-orange-glow);
+}
+
+.carousel-control-btn.left-control {
+  left: -25px;
+}
+
+.carousel-control-btn.right-control {
+  right: -25px;
+}
+
+.carousel-image-frame {
+  width: 100%;
+  height: 480px;
+  border: 1px solid var(--div-border-color);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-tag-overlay {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background-color: var(--div-yellow);
+  color: #000;
+  padding: 8px 18px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  z-index: 5;
+}
+
+.pve-taxi-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: contrast(1.05) brightness(0.9);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pve-mission-carousel:hover .pve-taxi-image {
+  transform: scale(1.02);
+}
+
+.carousel-vignette-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(7, 7, 9, 0.95) 0%, transparent 60%, rgba(7, 7, 9, 0.6) 100%);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .tactical-tabs-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .tabs-buttons-list {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+  .carousel-image-frame {
+    height: 300px;
+  }
+  .carousel-control-btn.left-control {
+    left: 10px;
+  }
+  .carousel-control-btn.right-control {
+    right: 10px;
+  }
+}
+
+/* ==========================================================================
+   SECTION 5: UPDATES, SYSTEM SPECS, BRAND PARTNERS FOOTER
+   ========================================================================== */
+.section-tactical-specs {
+  padding: 100px 0 60px 0;
+  background-color: var(--div-dark-bg);
+  position: relative;
+  z-index: 5;
+}
+
+.updates-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.update-card-item {
+  border: 1px solid var(--div-border-color);
+  background: var(--div-charcoal);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Left Updates Card with simulated Video preview */
+.card-video-preview .preview-panel {
+  height: 200px;
+  background: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('./assets/division_hero.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.mini-play-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--div-orange);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 3px;
+  box-shadow: 0 0 20px var(--div-orange-glow);
+  transition: all 0.3s ease;
+}
+
+.card-video-preview:hover .mini-play-btn {
+  transform: scale(1.12);
+  background-color: #ffffff;
+  color: var(--div-orange);
+}
+
+.update-card-details {
+  padding: 24px;
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.update-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--div-text-gray);
+  margin-bottom: 20px;
+}
+
+.card-arrow-link {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card-video-preview:hover .card-arrow-link {
+  background: var(--div-orange);
+  border-color: var(--div-orange);
+}
+
+.card-video-preview:hover .card-arrow-link svg {
+  stroke: #000;
+}
+
+/* Right Update Gear card */
+.card-gear-showcase {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  background: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.3)),
+    url('./assets/division_skull.png') no-repeat right center;
+  background-size: cover;
+  padding: 30px;
+  position: relative;
+  min-height: 350px;
+}
+
+.discover-gear-banner {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--div-yellow);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  align-self: flex-start;
+}
+
+.free-update-tag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-end;
+}
+
+.free-update-tag .label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--div-text-gray);
+}
+
+.free-update-tag .number {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+}
+
+.view-more-banner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--div-orange);
+  color: #000;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-gear-showcase:hover .view-more-banner {
+  transform: translateY(0);
+}
+
+/* System Requirements Spec Details Panel */
+.system-requirements-panel {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(14, 14, 18, 0.5);
+  padding: 40px;
+  margin-bottom: 80px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.system-requirements-panel::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(240, 130, 0, 0.05) 0%, transparent 70%);
+}
+
+.specs-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--div-orange);
+  margin-bottom: 24px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.specs-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--div-orange);
+  box-shadow: 0 0 6px var(--div-orange-glow);
+}
+
+.specs-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.specs-list li {
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  color: var(--div-text-gray);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  padding-bottom: 8px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.specs-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.spec-value {
+  color: var(--div-text-white);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   PARTNER BRAND GRID FOOTER
+   ========================================================================== */
+.tactical-footer-brands {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.brands-logo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(20px, 5vw, 60px);
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.brands-logo-row.console-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  padding-top: 24px;
+  width: 80%;
+}
+
+.brand-logo-logo {
+  opacity: 0.65;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.brand-logo-logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.brand-text-outline {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--div-text-white);
+  text-transform: uppercase;
+}
+
+.brand-logo-logo:hover .brand-text-outline {
+  color: var(--div-text-white);
+  -webkit-text-stroke: 1px var(--div-text-white);
+}
+
+.brand-text-console {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--div-text-gray);
+}
+
+.brand-logo-logo:hover .brand-text-console {
+  color: var(--div-orange);
+}
+
+.tactical-copyright {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.25);
+  text-align: center;
+  max-width: 900px;
+  margin-top: 20px;
+}
+
+@media (max-width: 992px) {
+  .updates-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .card-gear-showcase {
+    min-height: 280px;
+  }
+}

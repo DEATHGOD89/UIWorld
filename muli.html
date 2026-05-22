@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MULI // Smart Scheduler Effortless ABA Automation!</title>
+  <meta name="description" content="An all-in-one platform to grow and manage your ABA practice. Simplify scheduling, data collection, and clinical progress with AI.">
+  
+  <!-- SEO Meta Tags -->
+  <meta property="og:title" content="MULI // Smart Scheduler Effortless ABA Automation!">
+  <meta property="og:description" content="High-fidelity AI scheduler, clinic telemetry, and treatment dashboards.">
+  <meta property="og:image" content="./assets/avatar_2.png">
+  <link rel="preload" as="image" href="./assets/avatar_2.png" fetchpriority="high">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Oswald:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./muli.css">
+</head>
+<body class="muli-active">
+
+  <!-- Custom Amber Cursor Follower -->
+  <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring" id="custom-cursor-ring"></div>
+
+  <!-- Cosmic Sparks Background Canvas -->
+  <canvas id="muli-canvas"></canvas>
+
+  <!-- Orange and Purple Ambient Header Spotlights -->
+  <div class="muli-header-spotlight spot-orange"></div>
+  <div class="muli-header-spotlight spot-purple"></div>
+
+  <!-- Spaced-Out Premium Navbar Capsule -->
+  <nav class="navbar scrolled" id="muli-nav">
+    <div class="navbar-container">
+      
+      <!-- Left side: Brand Logo pill and Sequential Navigators -->
+      <div class="nav-left-hud">
+        
+        <!-- Sequential Navigators -->
+        <div class="nav-navigators">
+          <button class="btn-nav btn-prev" id="nav-prev" aria-label="Previous Page">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="nav-btn-text font-mono">PREV</span>
+          </button>
+          <button class="btn-nav btn-next" id="nav-next" aria-label="Next Page">
+            <span class="nav-btn-text font-mono">NEXT</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Muli Logo capsule -->
+        <div class="nav-logo-capsule font-mono">
+          <span class="logo-circle"></span>
+          <span class="brand-title">Muli</span>
+        </div>
+      </div>
+
+      <!-- Center side: Sections links capsule -->
+      <div class="nav-links-mid font-mono">
+        <a href="#features" class="capsule-link active">Features</a>
+        <a href="#product" class="capsule-link">Product</a>
+        <a href="#story" class="capsule-link">Story</a>
+        <a href="#team" class="capsule-link">Our Team</a>
+      </div>
+
+      <!-- Right side: Actions -->
+      <div class="nav-actions">
+        <a href="#booking" class="btn-login-link font-mono">Log In</a>
+        <a href="#booking" class="btn-call-capsule font-mono">Book a Demo</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- SECTION 1: HERO DISPLAY SECTION -->
+  <section class="section-muli-hero" id="home">
+    <div class="muli-grid-container">
+      
+      <!-- Main Titles and CTA row -->
+      <div class="hero-text-block">
+        <div class="scheduler-tag-pill font-mono">✦ SMART SCHEDULER</div>
+        <h1 class="hero-main-title font-oswald">
+          Smart Scheduler Effortless<br>ABA Automation!
+        </h1>
+        
+        <!-- Looping typewriter write-down text box -->
+        <div class="typewriter-loop-container">
+          <span id="hero-typing-subtitle" class="hero-subtitle font-mono"></span>
+          <span class="typing-cursor font-mono">|</span>
+        </div>
+
+        <div class="hero-cta-wrapper">
+          <a href="#booking" class="btn-muli-pill btn-orange-glow font-mono">
+            <span>Book a Demo</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- CENTERPIECE: DOUBLE HIGH-FIDELITY DASHBOARD PANELS (STATIC & STATIONARY) -->
+      <div class="muli-dashboard-wrapper">
+        <div class="muli-dashboard-grid">
+          
+          <!-- Card 1: Left Dashboard Card ( Wilson appointment details ) -->
+          <div class="muli-dash-card card-left glass-card font-mono">
+            <div class="dash-card-header">
+              <span class="appointment-header-tag">You have 3 new appointments</span>
+              <span class="pulse-indicator-dot"></span>
+            </div>
+            
+            <div class="appointment-profile-block">
+              <div class="profile-avatar-wrapper">
+                <img src="./assets/avatar_1.png" alt="Wilson Avatar" class="profile-avatar-img">
+              </div>
+              <div class="profile-info-details">
+                <h3 class="profile-name">Wilson Rhiel Madsen</h3>
+                <span class="profile-time">8:00 - 12:00 AM (4 hrs)</span>
+              </div>
+            </div>
+
+            <div class="appointment-actions-row">
+              <button class="btn-dash-action btn-prepare">Prepare</button>
+              <button class="btn-dash-action btn-start-session active-glow">Start session</button>
+            </div>
+
+            <div class="notes-completion-card">
+              <span class="notes-label">Notes to complete</span>
+              <div class="notes-item-card">
+                <span class="notes-avatar-dot"></span>
+                <span class="notes-text">Zayn Sharp</span>
+                <span class="notes-status font-mono">Creating notes...</span>
+                <button class="btn-notes-open" id="btn-notes-toggle">Open</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Right Dashboard Card (Session with Peter) -->
+          <div class="muli-dash-card card-right glass-card font-mono">
+            <div class="dash-card-header">
+              <div class="session-brand">
+                <span class="brand-square"></span>
+                <span class="session-label">Session with Peter</span>
+              </div>
+              <span class="session-timer-badge">01:45:12</span>
+            </div>
+
+            <div class="data-logging-card">
+              <span class="logging-title">Data logging</span>
+              <div class="logging-item active">
+                <span class="logging-dot animate-pulse"></span>
+                <span class="logging-label">verbal prompt</span>
+                <span class="logging-value">4 consecutive correct</span>
+              </div>
+            </div>
+
+            <div class="engage-section-card">
+              <div class="engage-header-row">
+                <span class="engage-title">Engage with play items</span>
+                <span class="engage-status">In Acquisition</span>
+              </div>
+              
+              <div class="emoji-ratings-grid">
+                <button class="emoji-btn-item">
+                  <span class="emoji-face">😠</span>
+                </button>
+                <button class="emoji-btn-item active">
+                  <span class="emoji-face">😐</span>
+                  <span class="emoji-btn-label">Completed</span>
+                  <span class="emoji-btn-time">10:45 AM</span>
+                </button>
+                <button class="emoji-btn-item">
+                  <span class="emoji-face">😃</span>
+                </button>
+              </div>
+
+              <div class="engage-prompt-action">
+                <button class="btn-engage-emoji">😐</button>
+                <button class="btn-engage-prompt" id="btn-engage-action">Prompt</button>
+                <button class="btn-engage-emoji">😃</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SECTION 2: CLIENT LOGOS TYPE LINES -->
+      <div class="muli-client-logos-row">
+        <span class="client-tagline font-mono">TRUSTED BY CLINICS & TEAMS ACROSS THE GLOBE</span>
+        <div class="logos-flex-container font-oswald">
+          <div class="client-logo-item">OPENDOOR</div>
+          <div class="client-logo-item">DocuSign</div>
+          <div class="client-logo-item">✦ slack</div>
+          <div class="client-logo-item">splunk></div>
+          <div class="client-logo-item">▲ ATLASSIAN</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: SIMPLIFY SCHEDULING (Clinic features grid) -->
+  <section class="section-muli-features" id="features">
+    <div class="muli-grid-container">
+      
+      <!-- Headline block -->
+      <div class="features-header-block">
+        <span class="feature-tag font-mono">✦ AUTOMATION SUITE</span>
+        <h2 class="features-main-title font-oswald">
+          With AI Simplify scheduling, data<br>collection, and clinical progress
+        </h2>
+      </div>
+
+      <!-- Horizontal metrics scrolling capsules grid -->
+      <div class="features-horizontal-grid font-mono">
+        <div class="metric-glass-capsule active">
+          <span class="capsule-icon">📋</span>
+          <span class="capsule-text">Care Management</span>
+          <span class="capsule-badge">Active</span>
+        </div>
+        <div class="metric-glass-capsule">
+          <span class="capsule-icon">📅</span>
+          <span class="capsule-text">Smart Scheduling</span>
+          <span class="capsule-badge">99%</span>
+        </div>
+        <div class="metric-glass-capsule">
+          <span class="capsule-icon">💳</span>
+          <span class="capsule-text">Automated Billing</span>
+          <span class="capsule-badge">Secured</span>
+        </div>
+        <div class="metric-glass-capsule">
+          <span class="capsule-icon">📈</span>
+          <span class="capsule-text">Clinical Reports</span>
+          <span class="capsule-badge">Insights</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4: SHOWCASE CLINIC OUTCOMES GRID (5 GLOWING GLASS CARDS) -->
+  <section class="section-muli-outcomes" id="outcomes">
+    <div class="muli-grid-container">
+      
+      <!-- Section Title -->
+      <div class="outcomes-header-block">
+        <span class="outcome-tag font-mono">✦ INTEGRATED SOLUTIONS</span>
+        <h2 class="outcomes-main-title font-oswald">
+          This is how ABA clinics are<br>using Muli for <span class="text-orange-gradient">better outcomes</span>
+        </h2>
+      </div>
+
+      <!-- 3-Column Offset Layout Grid -->
+      <div class="outcomes-masonry-grid">
+        
+        <!-- COLUMN 1: Left Column -->
+        <div class="masonry-column col-left">
+          
+          <!-- Card 1: Track & Manage Outcomes (Trends bar chart) -->
+          <div class="outcome-glass-card card-trends glass-card font-mono">
+            <div class="card-outcome-header">
+              <span class="outcome-bullet"></span>
+              <h3 class="outcome-card-title">Track and manage outcomes</h3>
+              <p class="outcome-card-subtitle">with intelligent visualizer</p>
+            </div>
+            
+            <div class="outcome-inner-visual trends-visual">
+              <span class="visual-inner-label">Trends</span>
+              <div class="trends-bar-chart">
+                <div class="bar-col">
+                  <div class="bar-fill bar-1"></div>
+                  <span class="bar-label">Mon</span>
+                </div>
+                <div class="bar-col active">
+                  <div class="bar-fill bar-2 glow-purple"></div>
+                  <span class="bar-label">Tue</span>
+                </div>
+                <div class="bar-col">
+                  <div class="bar-fill bar-3"></div>
+                  <span class="bar-label">Wed</span>
+                </div>
+              </div>
+            </div>
+            
+            <button class="btn-outcome-action btn-add-plan" id="btn-add-therapy-plan">+ Automated therapy plan</button>
+          </div>
+
+          <!-- Card 2: Always Feel Stress-Free (Sliders) -->
+          <div class="outcome-glass-card card-stress glass-card font-mono">
+            <div class="card-outcome-header">
+              <span class="outcome-bullet bullet-orange"></span>
+              <h3 class="outcome-card-title">Always feel stress-free</h3>
+              <p class="outcome-card-subtitle">Intelligent scheduler</p>
+            </div>
+            
+            <div class="outcome-inner-visual stress-visual">
+              <div class="slider-row">
+                <div class="slider-info">
+                  <span>Session Matcher</span>
+                  <span class="slider-val" id="matcher-val">80%</span>
+                </div>
+                <div class="slider-bar-track">
+                  <div class="slider-bar-fill fill-orange" id="matcher-fill" style="width: 80%"></div>
+                </div>
+              </div>
+              
+              <div class="slider-row">
+                <div class="slider-info">
+                  <span>Conflict Resolver</span>
+                  <span class="slider-val text-green">✓ Resolved</span>
+                </div>
+                <div class="slider-bar-track">
+                  <div class="slider-bar-fill fill-green" style="width: 100%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- COLUMN 2: Center Tall Column -->
+        <div class="masonry-column col-center">
+          
+          <!-- Card 3: Tall AI treatment planner -->
+          <div class="outcome-glass-card card-ai-plan glass-card tall-card font-mono">
+            <div class="card-outcome-header">
+              <div class="hud-checklist">
+                <div class="hud-checklist-item completed">
+                  <span class="checklist-bullet bullet-checked">✓</span>
+                  <span>Respond to instructions</span>
+                </div>
+                <div class="hud-checklist-item highlighted-task active">
+                  <span class="checklist-bullet bullet-glow">✦</span>
+                  <span>Optimize scheduling findings</span>
+                  <span class="hand-cursor-pointer">👆</span>
+                </div>
+                <div class="hud-checklist-item">
+                  <span class="checklist-bullet"></span>
+                  <span>Set up billing</span>
+                </div>
+                <div class="hud-checklist-item">
+                  <span class="checklist-bullet"></span>
+                  <span>Verify patient queues</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="outcome-planner-body">
+              <h3 class="outcome-card-title large-title">
+                Personalize treatment plans with the help of AI
+              </h3>
+              <p class="outcome-card-desc">
+                Generate tailored ABA clinical profiles, verify patient queues, and automate treatment logs instantly with secure machine learning pipelines.
+              </p>
+            </div>
+            
+            <div class="outcome-cta-block">
+              <a href="#booking" class="btn-outcome-cta font-mono">Book a Demo</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- COLUMN 3: Right Column -->
+        <div class="masonry-column col-right">
+          
+          <!-- Card 4: Collect Data in Real-time -->
+          <div class="outcome-glass-card card-realtime glass-card font-mono">
+            <div class="card-outcome-header">
+              <span class="outcome-bullet bullet-purple"></span>
+              <h3 class="outcome-card-title">Collect data in real-time</h3>
+              <p class="outcome-card-subtitle">Without a single delay</p>
+            </div>
+            
+            <div class="outcome-inner-visual realtime-visual">
+              <div class="audio-logging-hud">
+                <button class="logging-voice-pill" id="btn-voice-log">
+                  <span class="voice-dot animate-pulse"></span>
+                  <span>Voice Log</span>
+                </button>
+                
+                <div class="voice-waves-visual">
+                  <span class="wave-bar w-1"></span>
+                  <span class="wave-bar w-2"></span>
+                  <span class="wave-bar w-3"></span>
+                  <span class="wave-bar w-4"></span>
+                  <span class="wave-bar w-5"></span>
+                </div>
+
+                <div class="telemetry-dials-container">
+                  <div class="telemetry-dial-item">
+                    <div class="glowing-dial" id="dial-gain-hub">
+                      <div class="dial-pointer-needle" id="dial-gain-needle" style="transform: rotate(35deg);"></div>
+                      <span class="dial-digital-readout" id="dial-gain-readout">84%</span>
+                    </div>
+                    <span class="dial-caption-label">Input Gain</span>
+                  </div>
+
+                  <div class="telemetry-dial-item">
+                    <div class="glowing-dial" id="dial-sync-hub">
+                      <div class="dial-pointer-needle" id="dial-sync-needle" style="transform: rotate(115deg);"></div>
+                      <span class="dial-digital-readout" id="dial-sync-readout">99%</span>
+                    </div>
+                    <span class="dial-caption-label">Sync Rate</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Calibrate Your Flow -->
+          <div class="outcome-glass-card card-calibrate glass-card font-mono">
+            <div class="card-outcome-header">
+              <span class="outcome-bullet bullet-orange"></span>
+              <h3 class="outcome-card-title">Calibrate your flow</h3>
+              <p class="outcome-card-subtitle">Step by step</p>
+            </div>
+            
+            <div class="outcome-inner-visual calibrate-visual">
+              <div class="therapist-hud-badge">
+                <div class="mini-avatar-wrapper">
+                  <img src="./assets/avatar_1.png" alt="Clinician Mini" class="mini-avatar-img">
+                </div>
+                <div class="mini-avatar-details">
+                  <span class="therapist-name text-orange-gradient">Zayn Sharp, BCBA</span>
+                  <span class="therapist-status" id="calib-status">Calibrating...</span>
+                </div>
+              </div>
+              
+              <div class="calibration-telemetry-slider">
+                <div class="slider-bar-track">
+                  <div class="slider-bar-fill fill-purple" id="calib-fill" style="width: 65%"></div>
+                </div>
+              </div>
+            </div>
+            
+            <button class="btn-outcome-action btn-logs-link" id="btn-activity-logs">Activity logs →</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 5: CLINIC MANAGEMENT & CITATIONS -->
+  <section class="section-muli-clinic" id="product">
+    <div class="muli-grid-container">
+      
+      <div class="clinic-split-layout">
+        
+        <!-- Left Side: Narrative highlights -->
+        <div class="clinic-narrative-block">
+          <span class="clinic-small-tag font-mono">✦ INTEGRATED CLINIC</span>
+          <h2 class="clinic-title font-oswald">The smart way to manage your clinic.</h2>
+          <p class="clinic-desc">
+            Equip your clinicians and team leads with autonomous scheduling algorithms, telemetry tracking, and automated treatment layouts designed for rapid client progress.
+          </p>
+          <div class="clinic-action-ctas font-mono">
+            <a href="#booking" class="btn-clinic-explore">Explore Highlights →</a>
+          </div>
+        </div>
+
+        <!-- Right Side: Testimonial citation loop card -->
+        <div class="clinic-testimonial-card glass-card" id="story">
+          <div class="testimonial-header font-mono">
+            <span class="quote-mark">“</span>
+            <span class="rating-stars">★★★★★</span>
+          </div>
+
+          <!-- Typewriter write-down looping citation content -->
+          <div class="testimonial-citation-wrapper font-mono">
+            <p id="testimonial-typing-quote" class="citation-quote-text"></p>
+            <span class="citation-typing-cursor">|</span>
+          </div>
+
+          <div class="testimonial-author-block">
+            <div class="author-avatar font-mono">
+              <img src="./assets/avatar_2.png" alt="Marius Avatar" class="author-avatar-img">
+            </div>
+            <div class="author-info font-mono">
+              <h4 class="author-name">Marius Mahmood</h4>
+              <span class="author-title">Clinic Manager // ABA Specialists</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 5: BOOK DEMO FORM SECTION -->
+  <section class="section-muli-booking" id="booking">
+    <div class="muli-grid-container">
+      <div class="booking-wrapper">
+        <div class="booking-card glass-card">
+          <h2 class="booking-title font-oswald">Book a Demo</h2>
+          <p class="booking-subtitle font-mono">SCHEDULE AN ABA CLINICAL CALIBRATION</p>
+          
+          <form class="booking-form-body font-mono" id="muli-book-form">
+            <div class="form-group">
+              <label for="muli-name">FULL NAME</label>
+              <input type="text" id="muli-name" required placeholder="MARIUS MAHMOOD">
+            </div>
+            <div class="form-group">
+              <label for="muli-email">CLINIC EMAIL</label>
+              <input type="email" id="muli-email" required placeholder="MARIUS@ABA-SPECIALISTS.ORG">
+            </div>
+            <div class="form-group">
+              <label for="muli-size">CLINICAL STAFF SIZE</label>
+              <select id="muli-size">
+                <option value="1-5">1-5 CLINICIANS</option>
+                <option value="6-20" selected>6-20 CLINICIANS</option>
+                <option value="21-50">21-50 CLINICIANS</option>
+                <option value="50+">50+ CLINICIANS</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-submit-booking font-mono">SCHEDULE CLINIC TELEMETRY</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spaced-Out Dark Footer -->
+  <footer class="muli-footer" id="team">
+    <div class="muli-grid-container">
+      <div class="footer-top-row">
+        <div class="footer-brand font-oswald">Muli</div>
+        <p class="footer-desc">
+          High-fidelity AI scheduler systems, telehealth clinical loops, and automated treatment charts tailored for rapid clinical outcomes.
+        </p>
+      </div>
+      
+      <div class="footer-bottom-row font-mono">
+        <p>© 2026 MULI Schedulers & ABA Platform Inc. All Rights Reserved.</p>
+        <div class="footer-socials">
+          <a href="#">SYSTEM STACK</a>
+          <a href="#">CLINICAL SAFETY</a>
+          <a href="#">PRIVACY CODE</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./muli.js" type="module"></script>
+</body>
+</html>

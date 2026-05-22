@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOMATO — Zero-G Space Portfolio</title>
+  <meta name="description" content="Tomato is a UX innovator focusing on smooth, intuitive interactive experiences, zero-g experimental design, and spatial UI.">
+  
+  <!-- SEO Meta Tags -->
+  <meta property="og:title" content="TOMATO — Zero-G Space Portfolio">
+  <meta property="og:description" content="Creative portfolio and visual experiment showcase in zero-gravity space.">
+  <meta property="og:image" content="./assets/astronaut.png">
+  <link rel="preload" as="image" href="./assets/astronaut.png" fetchpriority="high">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Oswald:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./portfolio.css">
+</head>
+<body class="portfolio-active">
+
+  <!-- Custom Cursor Elements -->
+  <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring" id="custom-cursor-ring"></div>
+
+  <!-- Cosmic Nebula Starfield Canvas -->
+  <canvas id="portfolio-canvas"></canvas>
+
+  <!-- Premium Minimalist HUD Navbar -->
+  <nav class="navbar scrolled" id="portfolio-nav">
+    <div class="navbar-container">
+      
+      <!-- Left: Logo & Navigators -->
+      <div class="nav-left-hud">
+        <a href="#" class="logo-link" id="portfolio-logo">
+          <span class="portfolio-brand-title font-oswald">TOMATO</span>
+        </a>
+        
+        <!-- Navbar Page-to-Page Navigation -->
+        <div class="nav-navigators">
+          <button class="btn-nav btn-prev" id="nav-prev" aria-label="Previous Page">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="nav-btn-text">PREV</span>
+          </button>
+          <button class="btn-nav btn-next" id="nav-next" aria-label="Next Page">
+            <span class="nav-btn-text">NEXT</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Left-Center Separator matching mockup -->
+      <div class="nav-hud-separator left-sep">
+        <span class="sep-line"></span>
+        <span class="sep-x">×</span>
+        <span class="sep-line"></span>
+      </div>
+
+      <!-- Center: Section Indicator -->
+      <div class="nav-links-mid font-mono">
+        <span class="hud-center-tag">PORTFOLIO</span>
+      </div>
+
+      <!-- Center-Right Separator matching mockup -->
+      <div class="nav-hud-separator right-sep">
+        <span class="sep-line"></span>
+        <span class="sep-x">×</span>
+        <span class="sep-line"></span>
+      </div>
+
+      <!-- Right Actions: Year HUD & Hamburger -->
+      <div class="nav-actions">
+        <span class="hud-year font-mono">02025</span>
+        
+        <button class="hamburger-btn-grid" aria-label="Toggle Menu">
+          <div class="grid-dots">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- SECTION 1: SPACE HERO CONTAINER -->
+  <section class="section-portfolio-hero" id="home">
+    
+    <!-- Giant Backdrop 2025 with Wireframe Contour Echoes -->
+    <div class="outlined-backdrop-num font-oswald">
+      <span class="num-main">20&nbsp;&nbsp;&nbsp;&nbsp;25</span>
+      <span class="num-echo echo-1">20&nbsp;&nbsp;&nbsp;&nbsp;25</span>
+      <span class="num-echo echo-2">20&nbsp;&nbsp;&nbsp;&nbsp;25</span>
+      <span class="num-echo echo-3">20&nbsp;&nbsp;&nbsp;&nbsp;25</span>
+    </div>
+    
+    <div class="portfolio-hero-container">
+      
+      <!-- Left Column: Biography & Plain Tags (No unauthentic titles) -->
+      <div class="hero-left-col">
+        <p class="portfolio-bio-desc">
+          Tomato is An Innovator Who Focuses On User Experience Design. He Is Good At Creating Smooth And Intuitive Interactive Experiences For Users Through Simple And Emotional Designs. He Has Extensive Cross-Platform Design Experience, From Mobile Applications To Web Design, And Always Adheres To The User-Centered Design Concept.
+        </p>
+
+        <!-- Slogan Bottom Plain Text Tags (No bullet dots matching mockup) -->
+        <div class="bio-tags-row font-mono">
+          <span class="bio-tag">UI/UX Design</span>
+          <span class="bio-tag">3D Design</span>
+          <span class="bio-tag">Web design</span>
+        </div>
+      </div>
+
+      <!-- Center Space: Weightless Zero-G Astronaut -->
+      <div class="hero-center-col">
+        
+        <!-- Left Subtle Chevron Arrow -->
+        <button class="btn-space-arrow arrow-left" aria-label="Previous Project">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Astronaut Zero-G Floating Frame -->
+        <div class="astronaut-float-frame">
+          <div class="astronaut-glow-halo"></div>
+          <img src="./assets/astronaut.png" alt="Floating Zero-G Astronaut" class="astronaut-hero-img">
+        </div>
+
+        <!-- Right Subtle Chevron Arrow -->
+        <button class="btn-space-arrow arrow-right" aria-label="Next Project">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+      </div>
+
+      <!-- Right Column: Featured Project Categories (Minimal right-aligned matching mockup) -->
+      <div class="hero-right-col">
+        <div class="featured-projects-list">
+          
+          <!-- Category 1 -->
+          <div class="project-category-item">
+            <span class="cat-idx font-mono">IN WORKS</span>
+            <h3 class="project-cat-name font-oswald">Work Project</h3>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="project-category-item">
+            <span class="cat-idx font-mono">WEB WORKS</span>
+            <h3 class="project-cat-name font-oswald">Design Exercises</h3>
+          </div>
+
+          <!-- Category 3 -->
+          <div class="project-category-item">
+            <span class="cat-idx font-mono">3D WORKS</span>
+            <h3 class="project-cat-name font-oswald">Design Exercises</h3>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: ABOUT WORKS & SOFTWARE STACK -->
+  <section class="section-portfolio-grid" id="works">
+    <div class="tactical-container">
+      
+      <!-- Asymmetric 2-Column Offset Grid matching visual mockup -->
+      <div class="portfolio-split-grid">
+        
+        <!-- Left Column: Tall About card + AIGC Tools card -->
+        <div class="split-col-left">
+          
+          <!-- Left: Frosted Glass Bilingual About Card -->
+          <div class="frosted-about-card">
+            <div class="about-card-header">
+              <span class="about-card-title font-oswald">关于作品</span>
+            </div>
+            
+            <div class="about-card-body">
+              <p class="about-text-cn">
+                本次作品集精选了UI/UX设计、动画设计、网页设计及3D相关的作品，作品涵盖项目和个人练习两个维度，其中包括包含工作项目中的设计，也有一些平时个人练习的作品
+              </p>
+              <p class="about-text-en font-mono">
+                This Portfolio Selects Works Related To UI/UX Design, Animation Design, Web Design And 3D. The Works Cover Two Dimensions: Projects And Personal Practice. They Include Designs From Work Projects As Well As Some Works From Personal Practice.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tool Card 3: AIGC Tools (Placed on bottom left below About) -->
+          <div class="tool-glass-card hover-glow">
+            <div class="tool-logo-wrap">
+              <!-- Technical Wireframe Corner Brackets decoration -->
+              <span class="bracket-corner tl"></span>
+              <span class="bracket-corner tr"></span>
+              <span class="bracket-corner bl"></span>
+              <span class="bracket-corner br"></span>
+              
+              <!-- AIGC Sparks Vector -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+              </svg>
+            </div>
+            <div class="tool-info">
+              <span class="tool-hud-index font-mono">AIGC Tools</span>
+              <p class="tool-desc">Some of the visual works in the work use AIGC tools, midjourney, MJ, SD and other tools</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Figma card + Photoshop card + After Effects card -->
+        <div class="split-col-right">
+          
+          <!-- Tool Card 1: Figma -->
+          <div class="tool-glass-card hover-glow">
+            <div class="tool-logo-wrap">
+              <!-- Technical Wireframe Corner Brackets decoration -->
+              <span class="bracket-corner tl"></span>
+              <span class="bracket-corner tr"></span>
+              <span class="bracket-corner bl"></span>
+              <span class="bracket-corner br"></span>
+              
+              <!-- Figma Outlined Logo -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"></path>
+                <path d="M12 2h3.5a3.5 3.5 0 0 1 0 7H12V2z"></path>
+                <path d="M12 9h3.5a3.5 3.5 0 0 1 0 7H12V9z"></path>
+                <path d="M5 18.5A3.5 3.5 0 0 1 8.5 15H12v3.5a3.5 3.5 0 0 1-7 0z"></path>
+                <circle cx="8.5" cy="12" r="3.5"></circle>
+              </svg>
+            </div>
+            <div class="tool-info">
+              <span class="tool-hud-index font-mono">Figma</span>
+              <p class="tool-desc">The layout of the work and the packaging of the work are all completed in Figma.</p>
+            </div>
+          </div>
+
+          <!-- Tool Card 2: Photoshop -->
+          <div class="tool-glass-card hover-glow">
+            <div class="tool-logo-wrap text-logo font-mono">
+              <!-- Technical Wireframe Corner Brackets decoration -->
+              <span class="bracket-corner tl"></span>
+              <span class="bracket-corner tr"></span>
+              <span class="bracket-corner bl"></span>
+              <span class="bracket-corner br"></span>
+              <span>Ps</span>
+            </div>
+            <div class="tool-info">
+              <span class="tool-hud-index font-mono">Photoshop</span>
+              <p class="tool-desc">Some of the visual images in the work were processed using the Generative Fill function of Photoshop.</p>
+            </div>
+          </div>
+
+          <!-- Tool Card 4: After Effects -->
+          <div class="tool-glass-card hover-glow">
+            <div class="tool-logo-wrap text-logo font-mono">
+              <!-- Technical Wireframe Corner Brackets decoration -->
+              <span class="bracket-corner tl"></span>
+              <span class="bracket-corner tr"></span>
+              <span class="bracket-corner bl"></span>
+              <span class="bracket-corner br"></span>
+              <span>Ae</span>
+            </div>
+            <div class="tool-info">
+              <span class="tool-hud-index font-mono">After Effects</span>
+              <p class="tool-desc">The UI and visual animation effects in the work were produced using After Effects</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Space Footer -->
+  <footer class="space-footer">
+    <div class="tactical-container">
+      <div class="footer-bottom-row">
+        <p>© 2026 Tomato Space Showcase. All Rights Reserved.</p>
+        <div class="footer-socials">
+          <a href="#">LINKEDIN</a>
+          <a href="#">DRIBBBLE</a>
+          <a href="#">BEHANCE</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./portfolio.js" type="module"></script>
+</body>
+</html>

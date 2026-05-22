@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAZE // Avant-Garde Cyber-Fashion modeling Agency</title>
+  <meta name="description" content="Raze represents the pinnacle of space-fashion, cybernetic modeling and digital couture. Where creativity meets the runway.">
+  
+  <!-- SEO Meta Tags -->
+  <meta property="og:title" content="RAZE // Avant-Garde Cyber-Fashion modeling Agency">
+  <meta property="og:description" content="Redefining modeling standards by embracing diversity, celebrating individuality, and nurturing raw talent.">
+  <meta property="og:image" content="./assets/raze_mockup.jpg">
+  <link rel="preload" as="image" href="./assets/raze_hero.png" fetchpriority="high">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Oswald:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./raze.css">
+</head>
+<body class="raze-active">
+
+  <!-- Custom Cursor Elements -->
+  <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring" id="custom-cursor-ring"></div>
+
+  <!-- Cosmic Sparks Canvas Backdrop -->
+  <canvas id="raze-canvas"></canvas>
+
+  <!-- Technical Dashed Grid Overlay Lines (3 Columns alignment from Mockup) -->
+  <div class="grid-overlay-line col-line-1"></div>
+  <div class="grid-overlay-line col-line-2"></div>
+  <div class="grid-overlay-line col-line-3"></div>
+
+  <!-- Space-Fashion Capsule Navbar -->
+  <nav class="navbar scrolled" id="raze-nav">
+    <div class="navbar-container">
+      
+      <!-- Left: Navigation links capsule pill and sequential handlers -->
+      <div class="nav-left-hud">
+        
+        <!-- Sequential Page-to-Page Navigation -->
+        <div class="nav-navigators">
+          <button class="btn-nav btn-prev" id="nav-prev" aria-label="Previous Page">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="nav-btn-text font-mono">PREV</span>
+          </button>
+          <button class="btn-nav btn-next" id="nav-next" aria-label="Next Page">
+            <span class="nav-btn-text font-mono">NEXT</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Capsule Pill Links (Mockup Left Navbar Pill) -->
+        <div class="nav-capsule-links font-mono">
+          <a href="#home" class="capsule-link active">Home</a>
+          <a href="#about" class="capsule-link">About</a>
+          <a href="#services" class="capsule-link">Services</a>
+          <a href="#hiring" class="capsule-link">Hiring</a>
+        </div>
+      </div>
+
+      <!-- Right Actions: Capsule Pill with Become A Member & Avatar -->
+      <div class="nav-actions">
+        <a href="#signup-form" class="nav-member-capsule font-mono">
+          <span class="member-txt">Become A Member</span>
+          <div class="nav-avatar-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- SECTION 1: HERO DISPLAY SECTION -->
+  <section class="section-raze-hero" id="home">
+    
+    <!-- Central Background Ambient Glow Cone -->
+    <div class="raze-glow-cone"></div>
+
+    <!-- Massive Futuristic Stencil Backdrop logo "RAZE" -->
+    <div class="raze-backdrop-logo font-oswald">RAZE</div>
+
+    <!-- Central Centerpiece Container -->
+    <div class="raze-centerpiece-container">
+      
+      <!-- Completely Stationary Hooded galaxy centerpiece (assets/raze_hero.png) -->
+      <img src="./assets/raze_hero.png" alt="Raze Hooded Space-Couture Figure" class="raze-hero-img">
+
+      <!-- Interactive Floating Sing Up Circle Button in Center -->
+      <a href="#signup-form" class="floating-signup-btn font-mono">
+        <span class="stack-letter">S</span>
+        <span class="stack-letter">i</span>
+        <span class="stack-letter">n</span>
+        <span class="stack-letter">g</span>
+        <span class="stack-letter gap"></span>
+        <span class="stack-letter">U</span>
+        <span class="stack-letter">p</span>
+      </a>
+
+    </div>
+
+    <!-- Asymmetrical Left/Right Column Overlays -->
+    <div class="raze-hero-overlay-grid">
+      
+      <!-- Left Column Content (Mockup Left Text block with typing effect) -->
+      <div class="hero-col-left">
+        <div class="hero-slogan-block">
+          <span class="drop-cap font-oswald">W</span>
+          <div class="typing-loop-container">
+            <span class="typing-text-wrapper">
+              <span id="typing-text" class="typing-dynamic-text"></span>
+              <span class="typing-cursor">|</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Floating Social Nodes (f, o, x) on the Left Border line -->
+        <div class="hero-social-sidebar">
+          <a href="#" class="social-icon-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-icon-link" aria-label="Instagram">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="social-icon-link" aria-label="X (Twitter)">𝕏</a>
+        </div>
+      </div>
+
+      <!-- Right Column Content (Scroll prompt) -->
+      <div class="hero-col-right">
+        <!-- Scroll Prompt aligned perfectly to the right line -->
+        <div class="scroll-explore-prompt font-mono">
+          <span class="scroll-txt">Scroll to Explore</span>
+          <svg class="scroll-arrow-down" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: WHO WE ARE SECTION (Asymmetric Columns) -->
+  <section class="section-raze-about" id="about">
+    <div class="raze-grid-container">
+      
+      <div class="about-asymmetric-columns">
+        
+        <!-- Col 1: Bold simple title -->
+        <div class="about-title-col">
+          <h2 class="about-headline font-oswald">Who We<br>Are?</h2>
+        </div>
+
+        <!-- Col 2: High-Fashion dropcap paragraph -->
+        <div class="about-desc-col">
+          <div class="about-slogan-block">
+            <span class="drop-cap font-oswald">W</span>
+            <p class="about-text">
+              redefine the standards of modeling by embracing diversity, celebrating individuality, and nurturing raw talent. We believe beauty is a celestial expression that knows no bounds.
+            </p>
+          </div>
+        </div>
+
+        <!-- Col 3: Fully Transparent Glass-morphic Spec Card -->
+        <div class="about-card-col">
+          <div class="transparent-spec-card">
+            <h3 class="card-title font-oswald">Be a Part Of Something Great</h3>
+            <div class="card-actions font-mono">
+              <a href="#signup-form" class="btn-signin-capsule">Sign In</a>
+              <div class="card-action-icon-wrapper">
+                <!-- Mail Outline SVG Icon -->
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: CORE CONTENT & CYBER BANNER -->
+  <section class="section-raze-banner" id="services">
+    <div class="raze-grid-container">
+      
+      <!-- Asymmetrical Sub-banner card layout from Mockup -->
+      <div class="sub-banner-split-grid">
+        
+        <!-- Left half: Title card with pink underline and index 01 -->
+        <div class="banner-title-card">
+          <span class="banner-index font-mono">01</span>
+          <div class="banner-headline-wrap">
+            <h2 class="banner-main-title font-oswald">WE'RE NOT JUST A MODELING AGENCY</h2>
+            <div class="pink-underline-accent"></div>
+          </div>
+          <p class="banner-desc">
+            We're a dynamic platform that breathes life into dreams and transforms them into reality, whether you're breaking into the industry or a seasoned pro. We provide a launchpad for your aspirations.
+          </p>
+        </div>
+
+        <!-- Right half: Elegant Cyber-fashion portrait card -->
+        <div class="banner-portrait-card">
+          <img src="./assets/avatar_2.png" alt="Cyberpunk Couture Model" class="banner-portrait-img">
+        </div>
+
+      </div>
+
+      <!-- Bottom Headline Row -->
+      <div class="banner-bottom-row" id="hiring">
+        <div class="bottom-slogan-block">
+          <span class="drop-cap font-oswald">W</span>
+          <h2 class="bottom-main-headline font-oswald">e Believe Beauty Knows No Boundaries.</h2>
+        </div>
+
+        <!-- Anchored Bottom Illustration showing avatar head with purple glowing smoke -->
+        <div class="bottom-glowing-showcase">
+          <div class="avatar-glow-overlay"></div>
+          <img src="./assets/avatar_3.png" alt="Cybernetic Fashion Silhouette" class="bottom-showcase-avatar">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Form Section for Become A Member -->
+  <section class="section-raze-signup" id="signup-form">
+    <div class="signup-container">
+      <div class="signup-card">
+        <h2 class="signup-title font-oswald">Join The Runway</h2>
+        <p class="signup-subtitle font-mono">SUBMIT APPLICATION FOR SPATIAL PLACEMENT</p>
+        
+        <form class="signup-form-body font-mono" id="runway-form">
+          <div class="form-group">
+            <label for="user-name">FULL NAME</label>
+            <input type="text" id="user-name" required placeholder="ENTER YOUR FULL NAME">
+          </div>
+          <div class="form-group">
+            <label for="user-email">EMAIL ADDRESS</label>
+            <input type="email" id="user-email" required placeholder="ENTER YOUR EMAIL">
+          </div>
+          <div class="form-group">
+            <label for="user-height">HEIGHT (CM)</label>
+            <input type="number" id="user-height" placeholder="E.G. 182">
+          </div>
+          <button type="submit" class="btn-submit-signup">SUBMIT APPLICATION</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Space Footer -->
+  <footer class="space-footer">
+    <div class="raze-grid-container">
+      <div class="footer-bottom-row">
+        <p>© 2026 RAZE Space-Haute Couture Platforms. All Rights Reserved.</p>
+        <div class="footer-socials font-mono">
+          <a href="#">SYSTEM PROTOCOL</a>
+          <a href="#">SPATIAL COUTURE</a>
+          <a href="#">GLOW STICK</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./raze.js" type="module"></script>
+</body>
+</html>

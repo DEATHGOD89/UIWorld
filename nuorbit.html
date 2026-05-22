@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NUORBIT // Discover Digital Art & Collect NFTs!</title>
+  <meta name="description" content="A premium futuristic decentralized portal to discover, trade, and showcase digital cyber art and NFTs.">
+  
+  <!-- SEO Meta Tags -->
+  <meta property="og:title" content="NUORBIT // Discover Digital Art & Collect NFTs!">
+  <meta property="og:description" content="High-fidelity interactive cyber-teal digital art portal with concentric particle systems.">
+  <meta property="og:image" content="./assets/astronaut_portal.png">
+  <link rel="preload" as="image" href="./assets/astronaut_portal.png" fetchpriority="high">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./nuorbit.css">
+</head>
+<body class="nuo-active">
+
+  <!-- Custom Neon Cyan Cursor Follower -->
+  <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring" id="custom-cursor-ring"></div>
+
+  <!-- Cosmic Sparks Background Canvas (Cyan/Teal/White sparks) -->
+  <canvas id="nuo-canvas"></canvas>
+
+  <!-- Sweeping Ambient Teal Spotlights -->
+  <div class="nuo-header-spotlight spot-teal"></div>
+  <div class="nuo-header-spotlight spot-dark"></div>
+
+  <!-- Spaced-Out Premium Navbar Capsule -->
+  <nav class="navbar scrolled" id="nuo-nav">
+    <div class="navbar-container">
+      
+      <!-- Left side: Brand Logo pill and Sequential Navigators -->
+      <div class="nav-left-hud">
+        
+        <!-- Sequential Navigators -->
+        <div class="nav-navigators">
+          <button class="btn-nav btn-prev" id="nav-prev" aria-label="Previous Page">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="nav-btn-text font-mono">PREV</span>
+          </button>
+          <button class="btn-nav btn-next" id="nav-next" aria-label="Next Page">
+            <span class="nav-btn-text font-mono">NEXT</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Nuo Logo capsule -->
+        <div class="nav-logo-capsule font-mono">
+          <span class="logo-circle"></span>
+          <span class="brand-title">NUO</span>
+        </div>
+      </div>
+
+      <!-- Center side: Sections links capsule -->
+      <div class="nav-links-mid font-mono">
+        <a href="#" class="capsule-link active">HOME</a>
+        <a href="#" class="capsule-link">ABOUT</a>
+        <a href="#" class="capsule-link">TOKEN</a>
+        <a href="#" class="capsule-link">ROADMAP</a>
+      </div>
+
+      <!-- Right side: Actions -->
+      <div class="nav-actions">
+        <button class="btn-join-capsule font-mono" id="btn-join-us">
+          <svg class="globe-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; vertical-align: middle;">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span>JOIN US</span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- MAIN HERO SECTION -->
+  <section class="section-nuo-hero">
+    <div class="nuo-grid-container">
+
+      <!-- Centerpiece Container (Text with Overlapping Portal) -->
+      <div class="nuorbit-interactive-centerpiece-wrapper">
+        <h1 class="nuo-hero-title font-orbitron">
+          <span class="letter">N</span>
+          <span class="letter">U</span>
+          <span class="portal-placeholder">
+            <!-- Center Portal Ring and Astronaut layer overlapping in the foreground -->
+            <div class="portal-scene-wrapper">
+              <div class="portal-glow-back"></div>
+              <div class="portal-ring">
+                <!-- Concentric spinning dotted rings -->
+                <div class="portal-ring-dotted d-1"></div>
+                <div class="portal-ring-dotted d-2"></div>
+                
+                <!-- Astronaut character asset layered inside -->
+                <div class="portal-character-container">
+                  <img src="./assets/astronaut_portal.png" alt="Portal Astronaut" class="portal-character-img">
+                </div>
+              </div>
+              <!-- Layered animated smoke/fog fog atmosphere effects -->
+              <div class="portal-fog-1"></div>
+              <div class="portal-fog-2"></div>
+            </div>
+          </span>
+          <span class="letter">R</span>
+          <span class="letter">B</span>
+          <span class="letter">I</span>
+          <span class="letter">T</span>
+        </h1>
+      </div>
+
+      <!-- Left-aligned content block positioned elegantly below the N U letters -->
+      <div class="nuorbit-left-block">
+        <h2 class="nuo-tagline font-orbitron">DISCOVER DIGITAL ART AND COLLECT NFTS</h2>
+        
+        <!-- Looping typewriter write-down text box -->
+        <div class="typewriter-loop-container font-mono">
+          <span id="nuo-typing-subtitle" class="nuo-subtitle"></span>
+          <span class="typing-cursor">|</span>
+        </div>
+
+        <div class="nuo-cta-wrapper">
+          <a href="#" class="nuo-cta-link font-mono" id="btn-lets-orbit">
+            LET'S ORBIT <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- BOTTOM TELEMETRY & STATS HUD PANEL -->
+      <div class="nuorbit-bottom-hud font-mono">
+        
+        <!-- Statistics Columns -->
+        <div class="hud-stats-group">
+          <div class="stat-capsule">
+            <span class="stat-num font-orbitron">27K+</span>
+            <span class="stat-lbl">ARTISTS</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-capsule">
+            <span class="stat-num font-orbitron">876K+</span>
+            <span class="stat-lbl">ARTWORK</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-capsule">
+            <span class="stat-num font-orbitron">20K+</span>
+            <span class="stat-lbl">AUCTION</span>
+          </div>
+        </div>
+
+        <!-- Center: Interactive Play Video Circular Node -->
+        <button class="hud-play-btn" id="btn-play-video" aria-label="Play Video">
+          <div class="play-icon-hub">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+          </div>
+          <span class="play-btn-text">PLAY VIDEO</span>
+        </button>
+
+        <!-- Right: Social Connections row -->
+        <div class="hud-socials">
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Cinematic Video Modal Popup (Hidden by default) -->
+  <div class="nuo-video-modal" id="video-modal">
+    <div class="modal-glass-container">
+      <button class="btn-close-modal" id="btn-close-video" aria-label="Close Video">×</button>
+      <div class="video-placeholder-scene font-mono">
+        <div class="spinning-loader-hub"></div>
+        <span class="video-modal-tag font-mono">✦ INJECTING CYBERSTREAM LINK</span>
+        <h3 class="video-modal-title font-oswald">NUORBIT DIGITAL TRAILER</h3>
+        <p class="video-modal-desc">Calibrating decentralised streaming networks. Telemetry secured successfully.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="./nuorbit.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARCANE // League of Legends Showcase</title>
+  <meta name="description" content="An immersive, high-fidelity dark-cyberpunk interactive showcase of the Arcane series, featuring Jinx with custom green graffiti aesthetics.">
+  
+  <!-- SEO Meta Tags -->
+  <meta property="og:title" content="ARCANE // League of Legends Showcase">
+  <meta property="og:description" content="High-fidelity interactive gaming HUD landing page with custom neon green brush graffiti and particle physics.">
+  <meta property="og:image" content="./assets/jinx.png">
+  <link rel="preload" as="image" href="./assets/jinx.png" fetchpriority="high">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;500;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./arcane.css">
+</head>
+<body class="arcane-active">
+
+  <!-- Custom Neon Green Cursor Follower -->
+  <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring" id="custom-cursor-ring"></div>
+
+  <!-- Ambient Dark Green Spark/Smoke Background Canvas -->
+  <canvas id="arcane-canvas"></canvas>
+
+  <!-- Ambient Backlighting Radial Highlights -->
+  <div class="arcane-spotlight spot-green"></div>
+  <div class="arcane-spotlight spot-dark"></div>
+
+  <!-- HUD Viewport Outer Tech Frame Border -->
+  <div class="hud-outer-frame">
+    <div class="corner-notch top-left"></div>
+    <div class="corner-notch top-right"></div>
+    <div class="corner-notch bottom-left"></div>
+    <div class="corner-notch bottom-right"></div>
+  </div>
+
+  <!-- Spaced-Out Gaming HUD Navbar -->
+  <nav class="navbar scrolled" id="arcane-nav">
+    <div class="navbar-container">
+      
+      <!-- Left side: Sequential Navigators & Menu button -->
+      <div class="nav-left-hud">
+        
+        <!-- Sequential Navigators -->
+        <div class="nav-navigators">
+          <button class="btn-nav btn-prev" id="nav-prev" aria-label="Previous Page">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="nav-btn-text font-mono">PREV</span>
+          </button>
+          <button class="btn-nav btn-next disabled" id="nav-next" aria-label="Next Page" disabled>
+            <span class="nav-btn-text font-mono">NEXT</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Hamburger Toggle Button -->
+        <button class="menu-toggle" id="menu-btn" aria-label="Toggle Menu">
+          <div class="hamburger-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Center side: Brand Red Title -->
+      <div class="nav-logo-mid font-mono">
+        <a href="#" class="brand-title-arcane">ARCANE</a>
+      </div>
+
+      <!-- Right side: Actions -->
+      <div class="nav-actions">
+        <button class="btn-contact-capsule font-mono" id="btn-contact">
+          <span>CONTACT</span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- MAIN HERO SECTION -->
+  <section class="section-arcane-hero">
+    <div class="arcane-hero-container">
+
+      <!-- BACKGROUND GIANT DISTRESSED "ARCANE" HEADING -->
+      <div class="arcane-bg-stencil-wrapper">
+        <div class="arcane-stencil-text font-bebas" data-text="ARCANE">ARCANE</div>
+      </div>
+
+      <!-- CHARACTER ARTWORK WITH NEON GREEN SPLATTERS BACKPLATE -->
+      <div class="arcane-character-wrapper">
+        
+        <!-- Spray paint & paint drips backdrop -->
+        <div class="graffiti-backdrop">
+          <!-- SVG paint splatters for perfect visual scaling -->
+          <svg class="graffiti-svg" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g class="glow-filter">
+              <!-- Broad distressed spray patches -->
+              <circle cx="340" cy="180" r="140" fill="url(#paint-gradient)" opacity="0.15" filter="url(#blur-large)" />
+              <circle cx="450" cy="220" r="90" fill="url(#paint-gradient)" opacity="0.2" filter="url(#blur-med)" />
+              
+              <!-- Custom JINX Brush scribble path -->
+              <path d="M 220 120 C 260 90, 310 80, 350 140 C 370 170, 320 220, 260 210 C 220 200, 240 140, 290 120 C 330 100, 380 90, 420 150 C 440 180, 410 220, 360 210 C 330 200, 350 140, 400 120 C 450 90, 500 80, 540 150 C 560 180, 530 240, 470 230" 
+                    stroke="#84dc00" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" opacity="0.8" stroke-dasharray="1000" stroke-dashoffset="0" class="brush-stroke-1"/>
+              
+              <!-- Crossing splash marks -->
+              <path d="M 280 80 L 460 300 M 440 80 L 260 300" stroke="#84dc00" stroke-width="18" stroke-linecap="round" opacity="0.85" class="brush-stroke-2" />
+              
+              <!-- Dripping paint elements -->
+              <path d="M 260 210 L 260 280 M 340 140 L 340 230 M 420 190 L 420 310 M 470 230 L 470 340" stroke="#84dc00" stroke-width="5" stroke-linecap="round" opacity="0.75" class="brush-drips" />
+              
+              <!-- Paint splatter dots -->
+              <circle cx="210" cy="250" r="8" fill="#84dc00" opacity="0.9" />
+              <circle cx="250" cy="310" r="4" fill="#84dc00" opacity="0.7" />
+              <circle cx="310" cy="90" r="12" fill="#84dc00" opacity="0.8" />
+              <circle cx="490" cy="110" r="6" fill="#84dc00" opacity="0.9" />
+              <circle cx="530" cy="270" r="10" fill="#84dc00" opacity="0.8" />
+              <circle cx="410" cy="350" r="5" fill="#84dc00" opacity="0.8" />
+            </g>
+            
+            <defs>
+              <radialGradient id="paint-gradient" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#84dc00" />
+                <stop offset="100%" stop-color="transparent" />
+              </radialGradient>
+              <filter id="blur-large" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="80" />
+              </filter>
+              <filter id="blur-med" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="30" />
+              </filter>
+            </defs>
+          </svg>
+        </div>
+
+        <!-- Transparent Jinx standing character -->
+        <div class="character-container">
+          <img src="./assets/jinx.png" alt="Jinx - Arcane" class="character-img">
+        </div>
+      </div>
+
+      <!-- LEFT-ALIGNED INTERACTIVE HUD BLOCK -->
+      <div class="arcane-left-block">
+        <span class="hud-category font-mono">LEAGUE OF LEGENDS PROD™</span>
+        
+        <!-- Gaming HUD quote box with side indicator notches -->
+        <div class="hud-quote-container">
+          <div class="quote-border-bracket left"></div>
+          <div class="quote-content">
+            <span class="quote-tag font-mono">“ THERE IS A MONSTER ”</span>
+            <span class="quote-subtag font-mono">INSIDE ALL OF US</span>
+          </div>
+          <div class="quote-border-bracket right"></div>
+        </div>
+
+        <!-- Corner Notched Cyber Button -->
+        <div class="arcane-cta-wrapper">
+          <button class="btn-discover font-mono" id="btn-discover">
+            <span class="btn-corner top-left"></span>
+            <span class="btn-corner bottom-right"></span>
+            <span class="btn-text">DISCOVER</span>
+            <span class="btn-arrow font-sans">◱</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- DECK SEQUENTIAL PAGE COUNTER (Bottom Left) -->
+      <div class="hud-page-indicator font-mono">
+        <span class="num-active">11</span>
+        <span class="num-separator">/</span>
+        <span class="num-total">11</span>
+      </div>
+
+      <!-- CENTER HUD SCROLLING NODE -->
+      <div class="hud-scroll-node">
+        <div class="mouse-symbol">
+          <span class="mouse-wheel"></span>
+        </div>
+      </div>
+
+      <!-- RIGHT HUD FLOATING SOCIALS -->
+      <div class="hud-socials font-mono">
+        <a href="#" class="social-link" aria-label="Facebook">f</a>
+        <a href="#" class="social-link" aria-label="WhatsApp">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+        </a>
+        <a href="#" class="social-link" aria-label="Instagram">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="./arcane.js" type="module"></script>
+</body>
+</html>

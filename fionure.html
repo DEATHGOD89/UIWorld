@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAH // FIONURE Cybernetic Mecha Hub</title>
+  <meta name="description" content="Fionure is a mecha-organic tactical dashboard and cybernetic system diagnostics interface. Protocol 6 active.">
+  
+  <!-- SEO Meta Tags -->
+  <meta property="og:title" content="PAH // FIONURE Cybernetic Mecha Hub">
+  <meta property="og:description" content="Tactical mecha-organic dashboard and cybernetic core stream.">
+  <meta property="og:image" content="./assets/fionure.png">
+  <link rel="preload" as="image" href="./assets/fionure.png" fetchpriority="high">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Oswald:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./fionure.css">
+</head>
+<body class="fionure-active">
+
+  <!-- Custom Cursor Elements -->
+  <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring" id="custom-cursor-ring"></div>
+
+  <!-- Cosmic Sparks Canvas Backdrop -->
+  <canvas id="fionure-canvas"></canvas>
+
+  <!-- Technical HUD Navbar -->
+  <nav class="navbar scrolled" id="fionure-nav">
+    <div class="navbar-container">
+      
+      <!-- Left: Logo & Navigators -->
+      <div class="nav-left-hud">
+        <a href="#" class="logo-link" id="fionure-logo">
+          <span class="logo-pulse-dot"></span>
+          <span class="fionure-brand-title font-oswald">PAH</span>
+        </a>
+        
+        <!-- Navbar Page-to-Page Navigation -->
+        <div class="nav-navigators">
+          <button class="btn-nav btn-prev" id="nav-prev" aria-label="Previous Page">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="nav-btn-text">PREV</span>
+          </button>
+          <button class="btn-nav btn-next" id="nav-next" aria-label="Next Page">
+            <span class="nav-btn-text">NEXT</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Left-Center Separator matching mockup -->
+      <div class="nav-hud-separator left-sep">
+        <span class="sep-line"></span>
+        <span class="sep-x">×</span>
+        <span class="sep-line"></span>
+      </div>
+
+      <!-- Center: Section Navigation Links from Mockup -->
+      <div class="nav-links-mid font-mono">
+        <a href="#dashboard" class="nav-mid-link active">MAIN DASHBOARD</a>
+        <a href="#communication" class="nav-mid-link">COMMUNICATION</a>
+        <a href="#tactical" class="nav-mid-link">TACTICAL HUB</a>
+        <a href="#reports" class="nav-mid-link">REPORTS</a>
+        <a href="#settings" class="nav-mid-link">SETTINGS</a>
+      </div>
+
+      <!-- Center-Right Separator matching mockup -->
+      <div class="nav-hud-separator right-sep">
+        <span class="sep-line"></span>
+        <span class="sep-x">×</span>
+        <span class="sep-line"></span>
+      </div>
+
+      <!-- Right Actions: Year HUD & Hamburger -->
+      <div class="nav-actions">
+        <span class="hud-year font-mono">02026</span>
+        <button class="hamburger-btn-grid" aria-label="Toggle Menu">
+          <div class="grid-dots">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- SECTION 1: CYBER HERO CONTAINER -->
+  <section class="section-fionure-hero" id="home">
+    
+    <!-- Giant Backdrop FIONURE with Wireframe Contour Echoes and Metallic Reflection -->
+    <div class="outlined-backdrop-text font-oswald">
+      <span class="text-main">FIONURE</span>
+      <span class="text-echo echo-1">FIONURE</span>
+      <span class="text-echo echo-2">FIONURE</span>
+    </div>
+    
+    <div class="fionure-hero-container">
+      
+      <!-- Left Column: Tactical panel and metrics -->
+      <div class="hero-left-col">
+        <div class="panel-tag-row font-mono">
+          <span class="protocol-status-light"></span>
+          <span class="panel-tag">SYSTEM DIAGNOSTICS // PROTOCOL 6</span>
+        </div>
+        
+        <h1 class="fionure-hero-title font-oswald">
+          FIONURE <span class="light-accent">CORE</span>
+        </h1>
+        
+        <p class="fionure-hero-desc">
+          Cybernetic mecha-organic neural network online. Core coordinates fully synchronized. Establish tactical telemetry parameters to initiate active sector sweep and calibration.
+        </p>
+
+        <!-- Monospace diagnostics statistics grid -->
+        <div class="diagnostics-grid font-mono">
+          <div class="diag-item">
+            <span class="diag-label">CORE STATUS</span>
+            <span class="diag-val ok">STABLE // ACTIVE</span>
+          </div>
+          <div class="diag-item">
+            <span class="diag-label">POWER CAP</span>
+            <span class="diag-val">94.8% // COMPLETION</span>
+          </div>
+          <div class="diag-item">
+            <span class="diag-label">LATENCY</span>
+            <span class="diag-val latency-val">1.2 MS // SECURE</span>
+          </div>
+          <div class="diag-item">
+            <span class="diag-label">SECTOR CODE</span>
+            <span class="diag-val">06-B // OVERWATCH</span>
+          </div>
+        </div>
+
+        <!-- Slogan Bottom Plain Text Tags -->
+        <div class="bio-tags-row font-mono">
+          <span class="bio-tag">Mecha-Organic</span>
+          <span class="bio-tag">Crystalline Core</span>
+          <span class="bio-tag">Diagnostics</span>
+        </div>
+
+        <!-- Interactive CTAs -->
+        <div class="fionure-cta-row">
+          <button class="btn-mecha-pill btn-calibrate">
+            <span>INITIATE CALIBRATION</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="23 4 23 10 17 10"></polyline>
+              <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Center Pillar: Weighted floating mecha-organic centerpiece and arrows -->
+      <div class="hero-center-col">
+        
+        <!-- Left Subtle Chevron Arrow -->
+        <button class="btn-mecha-arrow arrow-left" aria-label="Previous Module">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Mecha Crystalline Floating Frame -->
+        <div class="fionure-float-frame">
+          <div class="fionure-glow-halo"></div>
+          <img src="./assets/fionure.png" alt="Cybernetic Mecha Crystal Core" class="fionure-hero-img">
+        </div>
+
+        <!-- Right Subtle Chevron Arrow -->
+        <button class="btn-mecha-arrow arrow-right" aria-label="Next Module">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+      </div>
+
+      <!-- Right Column: System Telemetry / Dashboard Cards -->
+      <div class="hero-right-col">
+        <div class="telemetry-hud-card font-mono">
+          <div class="card-hud-header">
+            <span class="header-indicator"></span>
+            <span class="card-hud-title">ACTIVE SECTOR STREAM</span>
+          </div>
+          
+          <div class="telemetry-logs-list">
+            <div class="log-entry">
+              <span class="log-time">12:54:18</span>
+              <span class="log-txt">Neural link established. sector 06-B</span>
+            </div>
+            <div class="log-entry">
+              <span class="log-time">12:54:20</span>
+              <span class="log-txt">Crystalline core frequency = 432.8Hz</span>
+            </div>
+            <div class="log-entry">
+              <span class="log-time">12:54:35</span>
+              <span class="log-txt">Telemetry packets synchronized.</span>
+            </div>
+            <div class="log-entry">
+              <span class="log-time">12:54:44</span>
+              <span class="log-txt">System overwatch operating within safety</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="interactive-node-selectors">
+          <span class="selector-title font-mono">CORE NODE CHANNELS</span>
+          <div class="node-items-list">
+            <div class="node-selector-item active" data-channel="primary">
+              <span class="node-indicator"></span>
+              <span class="node-name font-mono">PRIMARY STREAM</span>
+            </div>
+            <div class="node-selector-item" data-channel="auxiliary">
+              <span class="node-indicator"></span>
+              <span class="node-name font-mono">AUXILIARY LINK</span>
+            </div>
+            <div class="node-selector-item" data-channel="diagnostics">
+              <span class="node-indicator"></span>
+              <span class="node-name font-mono">DIAGNOSTICS CORE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: CORE DETAILS & STATS -->
+  <section class="section-fionure-details" id="tactical">
+    <div class="tactical-container">
+      
+      <!-- Asymmetric offset columns -->
+      <div class="fionure-split-grid">
+        
+        <!-- Left: Frosted glass panel with bilingual mecha context -->
+        <div class="split-col-left">
+          <div class="frosted-mecha-card">
+            <div class="card-header-accent">
+              <span class="card-hud-index font-mono">[06 // DETAIL]</span>
+              <h2 class="card-title font-oswald">核心模块规格</h2>
+            </div>
+            <div class="card-body-content">
+              <p class="cn-text">
+                FIONURE 核心是一种先进的半机械半有机晶体复合结构，能够产生并稳定高达 94.8% 的神经网络能量电荷。在 Protocol 6 协议的激活下，核心将建立一个零延迟的系统诊断通道，使得各战术层级可以在无视传统物理介质的情况下，实时同步数据并进行战术部署。
+              </p>
+              <p class="en-text font-mono">
+                The Fionure core represents an advanced mecha-organic crystal composite structure capable of generating and stabilizing neural network power capacities of up to 94.8%. Upon active protocol 6 initiation, the core deploys zero-latency telemetry diagnostics channels, allowing real-time data sync and tactical overwatch deployment across all functional segments.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: 2x2 grid of detailed HUD sub-system cards -->
+        <div class="split-col-right">
+          
+          <!-- Tool/Spec Card 1 -->
+          <div class="mecha-spec-card hover-glow">
+            <div class="card-icon-wrap">
+              <span class="corner-bracket tl"></span>
+              <span class="corner-bracket tr"></span>
+              <span class="corner-bracket bl"></span>
+              <span class="corner-bracket br"></span>
+              <!-- Grid Shield SVG Icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="card-details">
+              <span class="card-hud-code font-mono">SYS // HARDSHELL SHIELD</span>
+              <p class="card-desc">Advanced crystalline shielding matrix providing extreme mechanical resistance and core protection against thermal discharge.</p>
+            </div>
+          </div>
+
+          <!-- Tool/Spec Card 2 -->
+          <div class="mecha-spec-card hover-glow">
+            <div class="card-icon-wrap">
+              <span class="corner-bracket tl"></span>
+              <span class="corner-bracket tr"></span>
+              <span class="corner-bracket bl"></span>
+              <span class="corner-bracket br"></span>
+              <!-- Pulse Wave SVG Icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <div class="card-details">
+              <span class="card-hud-code font-mono">SYS // NEURAL SYNAPSE</span>
+              <p class="card-desc">Zero-latency biological and mecha integrated stream processing over 432 million telemetry calculation packets per millisecond.</p>
+            </div>
+          </div>
+
+          <!-- Tool/Spec Card 3 -->
+          <div class="mecha-spec-card hover-glow">
+            <div class="card-icon-wrap text-icon font-mono">
+              <span class="corner-bracket tl"></span>
+              <span class="corner-bracket tr"></span>
+              <span class="corner-bracket bl"></span>
+              <span class="corner-bracket br"></span>
+              <span>P6</span>
+            </div>
+            <div class="card-details">
+              <span class="card-hud-code font-mono">SYS // PROTOCOL 6 CALIBRATOR</span>
+              <p class="card-desc">Automatic calibration systems constantly executing micro-alignments to avoid resonance feedback loop anomalies.</p>
+            </div>
+          </div>
+
+          <!-- Tool/Spec Card 4 -->
+          <div class="mecha-spec-card hover-glow">
+            <div class="card-icon-wrap">
+              <span class="corner-bracket tl"></span>
+              <span class="corner-bracket tr"></span>
+              <span class="corner-bracket bl"></span>
+              <span class="corner-bracket br"></span>
+              <!-- Crosshair Target SVG Icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="22" y1="12" x2="18" y2="12"></line>
+                <line x1="6" y1="12" x2="2" y2="12"></line>
+                <line x1="12" y1="6" x2="12" y2="2"></line>
+                <line x1="12" y1="22" x2="12" y2="18"></line>
+              </svg>
+            </div>
+            <div class="card-details">
+              <span class="card-hud-code font-mono">SYS // TACTICAL OVERWATCH</span>
+              <p class="card-desc">Advanced multi-dimensional target acquisition grids scanning sector coordinates and mapping organic core anomalies.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mecha Footer -->
+  <footer class="space-footer">
+    <div class="tactical-container">
+      <div class="footer-bottom-row">
+        <p>© 2026 PAH Cybernetic Overwatch Systems. All Rights Reserved.</p>
+        <div class="footer-socials">
+          <a href="#">SYSTEM STATUS</a>
+          <a href="#">SECURE TELEMETRY</a>
+          <a href="#"> Bushido Code </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./fionure.js" type="module"></script>
+</body>
+</html>

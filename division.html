@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Division — When Society Falls We Rise</title>
+  <meta name="description" content="In the wake of a devastating pandemic, New York City descends into chaos. As a member of The Division, rise to restore order and save what remains.">
+  
+  <!-- SEO Meta Tags -->
+  <meta property="og:title" content="The Division — When Society Falls We Rise">
+  <meta property="og:description" content="RPG shooter experience in a modern military setting. Take back New York from chaotic factions.">
+  <meta property="og:image" content="./assets/division_hero.png">
+  <link rel="preload" as="image" href="./assets/division_hero.png" fetchpriority="high">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./division.css">
+</head>
+<body class="division-active">
+
+  <!-- Custom Cursor Elements (Reused for consistent premium theme) -->
+  <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring" id="custom-cursor-ring"></div>
+
+  <!-- Ambient Smoke & Ember Particle Canvas -->
+  <canvas id="ember-canvas"></canvas>
+
+  <!-- Gritty Tactical Navbar -->
+  <nav class="navbar scrolled" id="division-nav">
+    <div class="navbar-container">
+      
+      <!-- Logo and Toggle hamburger -->
+      <div class="logo-and-menu">
+        <button class="hamburger-btn-gritty" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <a href="#" class="logo-link" id="division-logo">
+          <div class="logo-wrapper">
+            <!-- Orange glowing watch circular icon -->
+            <svg class="orange-watch-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="#f08200" stroke-width="2" />
+              <circle cx="12" cy="12" r="6" stroke="#f08200" stroke-width="1.5" stroke-dasharray="3 2" />
+              <circle cx="12" cy="12" r="2" fill="#f08200" class="watch-center-pulse" />
+            </svg>
+            <span class="division-brand-title">THE<span class="accent-orange">DIVISION</span></span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Mid Navigation Menu -->
+      <div class="nav-links-mid">
+        <a href="#game" class="nav-mid-link active">Game</a>
+        <a href="#expansions" class="nav-mid-link">Expansions</a>
+        <a href="#news" class="nav-mid-link">News</a>
+        <a href="#customization" class="nav-mid-link">Customization</a>
+        <a href="#forum" class="nav-mid-link">Forum</a>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Navigation Buttons (Prev/Next) -->
+        <div class="nav-navigators">
+          <button class="btn-nav btn-prev" id="nav-prev" aria-label="Previous Page">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="nav-btn-text">PREV</span>
+          </button>
+          <button class="btn-nav btn-next" id="nav-next" aria-label="Next Page">
+            <span class="nav-btn-text">NEXT</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <a href="#play-now" class="btn-play-now">
+          <span>Play Now</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Gritty Tactical Background -->
+  <div class="division-hero-backdrop">
+    <div class="backdrop-img" style="background-image: url('./assets/division_hero.png');"></div>
+    <div class="backdrop-vignette"></div>
+    <div class="backdrop-orange-flare"></div>
+  </div>
+
+  <!-- Hero Content -->
+  <section class="section-division-hero">
+    <div class="hero-tactical-container">
+      
+      <!-- Brand Logo / Sub-brand -->
+      <div class="sub-brand-logo-row">
+        <svg class="sub-brand-watch" width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" stroke="#8c939c" stroke-width="2" />
+          <circle cx="12" cy="12" r="4" fill="#f08200" />
+        </svg>
+        <span class="sub-brand-text">TOM CLANCY'S <span class="white-text">THE DIVISION</span></span>
+      </div>
+
+      <!-- Main Slogan -->
+      <h1 class="tactical-slogan">
+        WHEN SOCIETY FALLS<br>
+        <span class="highlight-orange">WE RISE.</span>
+      </h1>
+
+      <!-- Description Block -->
+      <p class="tactical-description">
+        Tom Clancy's The Division is a revolutionary next-gen experience that brings the RPG into a modern military setting. In the wake of a devastating pandemic that sweeps through New York City, basic services fail one by one, and society descends into chaos.
+      </p>
+
+      <!-- Scroll Down Indicator -->
+      <div class="scroll-down-tactical">
+        <a href="#overview" class="btn-scroll-down">
+          <span>SCROLL DOWN</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 2: Overview Grid -->
+  <section class="section-tactical-overview" id="overview">
+    <div class="tactical-container">
+      
+      <div class="overview-grid-layout">
+        
+        <!-- Left Column: Skull free trial card -->
+        <div class="tactical-card play-free-card">
+          <div class="skull-img-wrapper">
+            <img src="./assets/division_skull.png" alt="Tactical Skull Emblem" class="skull-graphic-img">
+          </div>
+          <div class="play-free-banner">
+            <div class="yellow-tag">PLAY FOR FREE</div>
+            <div class="free-sub-details">
+              <span class="free-version">FREE</span>
+              <span class="free-update">UPDATE 1.5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Cinematic Street view + Description -->
+        <div class="overview-content-wrapper">
+          
+          <div class="cinematic-photo-card">
+            <!-- Simulated dark street night scene with neon "Muerte" -->
+            <div class="muerte-neon-glow">
+              <span class="neon-light">Muerte</span>
+            </div>
+            <div class="photo-card-glow-overlay"></div>
+          </div>
+
+          <div class="overview-text-block">
+            <h2 class="overview-section-title">OVERVIEW</h2>
+            <p class="overview-desc-text">
+              We live in a complex world. The more advanced it gets, the more vulnerable it becomes. We've created a house of cards: remove just one, and everything fall apart. As an agent of The Division, you are the last line of defense in New York City.
+            </p>
+            <a href="#read-more" class="btn-read-more-grunge">
+              <span>READ MORE</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 3: Feature Blocks (Last Stand / Finding Your Way) -->
+  <section class="section-tactical-features">
+    <div class="tactical-container">
+      
+      <div class="features-split-grid">
+        
+        <!-- Left Side Column -->
+        <div class="feature-left-col">
+          
+          <!-- Featured Video Card -->
+          <div class="featured-video-panel">
+            <div class="video-overlay-text">/ FEATURED</div>
+            <!-- Video Play Button Overlay -->
+            <button class="btn-play-video-overlay" aria-label="Play video">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </button>
+            <div class="video-panel-glow"></div>
+          </div>
+
+          <!-- Description block -->
+          <div class="finding-way-block">
+            <h3 class="feature-block-title font-oswald">FINDING YOUR WAY</h3>
+            <p class="feature-block-desc">
+              Last Stand includes the Last Stand expansion and a new game mode. This expansion offers a new way to experience the Dark Zone in a separate team-versus-team mode without the Rogue mechanic in Tactical Operations.
+            </p>
+            <a href="#read-more" class="btn-read-more-grunge">
+              <span>READ MORE</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Side Column: Last Standkneeling Soldier -->
+        <div class="feature-right-col">
+          
+          <div class="last-stand-soldier-card">
+            <div class="vertical-soldier-tag">
+              <span class="vertical-number">03</span>
+              <span class="vertical-title">LAST STAND</span>
+            </div>
+            
+            <!-- Kneeling Soldier graphic backdrop, using the generated hero background scaled differently -->
+            <div class="soldier-img-bg" style="background-image: url('./assets/division_hero.png');"></div>
+            
+            <!-- Side vertical expansion lists -->
+            <div class="expansion-selectors-sidebar">
+              <button class="arrow-up-gritty">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+              </button>
+              <div class="selector-list">
+                <div class="selector-item font-oswald">EXPANSION 1</div>
+                <div class="selector-item font-oswald">EXPANSION 2</div>
+                <div class="selector-item font-oswald active">EXPANSION 3: LAST STAND</div>
+              </div>
+              <button class="arrow-down-gritty">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <div class="soldier-card-tactical-overlay"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 4: Key Features & Interactive Tabs -->
+  <section class="section-tactical-tabs">
+    <div class="tactical-container">
+      
+      <!-- Interactive Grid Tabs Navigation -->
+      <div class="tactical-tabs-navbar">
+        <div class="tabs-buttons-list">
+          <button class="btn-tab-gritty active" data-tab="darkzone">THE DARK ZONE</button>
+          <button class="btn-tab-gritty" data-tab="jungle">URBAN JUNGLE</button>
+          <button class="btn-tab-gritty" data-tab="breathing">BREATHING WORLD</button>
+        </div>
+        <div class="bordered-features-title">KEY FEATURES</div>
+      </div>
+
+      <!-- Tab Content display -->
+      <div class="tab-content-panel active" id="tab-content-darkzone">
+        <p class="tab-explanation-text">
+          Resistance is the second update released for Year 2 of Tom Clancy's The Division and is the biggest free update to date. Resistance area includes a completely new zone of the map.
+        </p>
+
+        <!-- Social Media Outlets -->
+        <div class="tactical-social-outlets">
+          <a href="#" class="social-outlet-item" aria-label="Facebook"><span class="icon-fb">📘</span></a>
+          <a href="#" class="social-outlet-item" aria-label="Twitter"><span class="icon-tw">🐦</span></a>
+          <a href="#" class="social-outlet-item" aria-label="YouTube"><span class="icon-yt">🎬</span></a>
+          <a href="#" class="social-outlet-item" aria-label="Google Plus"><span class="icon-gp">➕</span></a>
+        </div>
+
+        <!-- PVE Mission Carousel Frame -->
+        <div class="pve-mission-carousel">
+          
+          <button class="carousel-control-btn left-control" aria-label="Previous image">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          
+          <!-- Yellow taxi cab graphic wrapper -->
+          <div class="carousel-image-frame">
+            <div class="carousel-tag-overlay font-oswald">PVE MISSION</div>
+            <img src="./assets/division_taxi.png" alt="PVE Mission Taxi Cover" class="pve-taxi-image">
+            <div class="carousel-vignette-overlay"></div>
+          </div>
+
+          <button class="carousel-control-btn right-control" aria-label="Next image">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 5: Updates Grid / System Specs / Brand Partners Footer -->
+  <section class="section-tactical-specs">
+    <div class="tactical-container">
+      
+      <!-- Updates Cards Grid -->
+      <div class="updates-cards-grid">
+        
+        <!-- Left Updates Card -->
+        <div class="update-card-item card-video-preview">
+          <div class="preview-panel">
+            <button class="mini-play-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </button>
+          </div>
+          <div class="update-card-details">
+            <p class="update-desc">
+              Falcon Lost introduces you to an exclusive new mission against the Last Man Battalion. Join the JTF and work as a team. But be cautious, the LMB won't let you go easily and await you with their deadliest weapons yet.
+            </p>
+            <div class="card-arrow-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f08200" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Updates Card (Gear / Free Update 1.2 / View More) -->
+        <div class="update-card-item card-gear-showcase">
+          <div class="discover-gear-banner font-oswald">DISCOVER<br>NEW GEAR</div>
+          <div class="free-update-tag">
+            <span class="label font-oswald">FREE UPDATE</span>
+            <span class="number font-oswald">1.2</span>
+          </div>
+          
+          <div class="view-more-banner font-oswald">
+            <span>VIEW MORE</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- System Requirements Spec Details -->
+      <div class="system-requirements-panel">
+        <h4 class="specs-heading font-oswald">SYSTEM REQUIREMENTS</h4>
+        <ul class="specs-list font-oswald">
+          <li>OS: <span class="spec-value">Windows® 7, Windows 8.1, Windows 10 (64-bit versions only)</span></li>
+          <li>Processor: <span class="spec-value">Intel Core i5-2400 | AMD FX-6100, or better</span></li>
+          <li>Memory: <span class="spec-value">6 GB RAM</span></li>
+          <li>Graphics: <span class="spec-value">NVIDIA GeForce GTX 560 with 2GB VRAM | AMD Radeon HD 7770, or better</span></li>
+          <li>DirectX: <span class="spec-value">Version 11</span></li>
+          <li>Network: <span class="spec-value">Broadband Internet connection</span></li>
+          <li>Storage: <span class="spec-value">40 GB available space</span></li>
+        </ul>
+      </div>
+
+      <!-- Partner Brand Grid Footer -->
+      <footer class="tactical-footer-brands">
+        <div class="brands-logo-row">
+          
+          <!-- Ubisoft Logo -->
+          <div class="brand-logo-logo">
+            <span class="brand-text-outline font-oswald">UBISOFT</span>
+          </div>
+          <!-- Uplay Logo -->
+          <div class="brand-logo-logo">
+            <span class="brand-text-outline font-oswald">uplay</span>
+          </div>
+          <!-- Snowdrop Logo -->
+          <div class="brand-logo-logo">
+            <span class="brand-text-outline font-oswald">SNOWDROP</span>
+          </div>
+          <!-- Massive Logo -->
+          <div class="brand-logo-logo">
+            <span class="brand-text-outline font-oswald">MASSIVE</span>
+          </div>
+
+        </div>
+
+        <div class="brands-logo-row console-row">
+          <!-- PS4 Logo -->
+          <div class="brand-logo-logo">
+            <span class="brand-text-console font-oswald">PlayStation®4</span>
+          </div>
+          <!-- Gamers Gear Logo -->
+          <div class="brand-logo-logo">
+            <span class="brand-text-console font-oswald">GAMER GEAR</span>
+          </div>
+        </div>
+
+        <!-- Copyright legal text -->
+        <p class="tactical-copyright">
+          © 2026 Ubisoft Entertainment. All Rights Reserved. Tom Clancy's, The Division Logo, the Soldier Icon, Ubisoft, and the Ubisoft logo are trademarks of Ubisoft Entertainment in the US and/or other countries. "PlayStation" and "PS4" is a trademark of Sony Computer Entertainment Inc. Software platform logo TM and © EMA 2006.
+        </p>
+
+      </footer>
+
+    </div>
+  </section>
+
+  <script src="./division.js" type="module"></script>
+</body>
+</html>

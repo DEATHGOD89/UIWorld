@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AETHER — Cyber Design Agency</title>
+  <meta name="description" content="We build brands that stand out in the digital age. Premium product design, branding, and motion graphics.">
+  
+  <!-- SEO Meta Tags -->
+  <meta property="og:title" content="AETHER — Cyber Design Agency">
+  <meta property="og:description" content="Sleek branding and digital experiences for high applicability.">
+  <meta property="og:image" content="./assets/agency_hero.png">
+  <link rel="preload" as="image" href="./assets/agency_hero.png" fetchpriority="high">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Oswald:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./agency.css">
+</head>
+<body class="agency-active">
+
+  <!-- Custom Cursor Elements (Unified premium consistency) -->
+  <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring" id="custom-cursor-ring"></div>
+
+  <!-- Cyber Constellation Grid Canvas -->
+  <canvas id="agency-canvas"></canvas>
+
+  <!-- Premium Agency Navbar -->
+  <nav class="navbar scrolled" id="agency-nav">
+    <div class="navbar-container">
+      
+      <!-- Left: Navigation Links -->
+      <div class="nav-links-mid">
+        <a href="#home" class="nav-mid-link active">Home</a>
+        <a href="#services" class="nav-mid-link">Services</a>
+        <a href="#works" class="nav-mid-link">Works</a>
+        <a href="#about" class="nav-mid-link">About</a>
+        <a href="#contact" class="nav-mid-link">Contact</a>
+      </div>
+
+      <!-- Center: Glowing Radiating SVG Logo -->
+      <a href="#" class="logo-link" id="agency-logo">
+        <div class="logo-wrapper">
+          <svg class="radiating-logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#ff7c00" stroke-width="1.5" stroke-dasharray="2 2" class="spin-ring" />
+            <circle cx="12" cy="12" r="7" stroke="#ff7c00" stroke-width="2" />
+            <circle cx="12" cy="12" r="3" fill="#ff7c00" class="pulse-center" />
+          </svg>
+          <span class="agency-brand-title">AETHER</span>
+        </div>
+      </a>
+
+      <!-- Right Actions: Navigators & Hamburger Grid -->
+      <div class="nav-actions">
+        
+        <!-- Navigation Buttons (Prev/Next) -->
+        <div class="nav-navigators">
+          <button class="btn-nav btn-prev" id="nav-prev" aria-label="Previous Page">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span class="nav-btn-text">PREV</span>
+          </button>
+          <button class="btn-nav btn-next" id="nav-next" aria-label="Next Page">
+            <span class="nav-btn-text">NEXT</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Custom Grid Hamburger -->
+        <button class="hamburger-btn-grid" aria-label="Toggle Menu">
+          <div class="grid-dots">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+          <span class="menu-label font-oswald">MENU</span>
+        </button>
+
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- SECTION 1: HERO CONTAINER -->
+  <section class="section-agency-hero" id="home">
+    <div class="hero-glowing-glow"></div>
+    
+    <div class="agency-hero-container">
+      
+      <!-- Left Column: Slogan and CTAs -->
+      <div class="hero-left-col">
+        <span class="design-agency-tag font-oswald">— DESIGN AGENCY</span>
+        
+        <h1 class="agency-main-slogan">
+          Building<br>
+          brands that<br>
+          <span class="highlight-orange">stand out</span>
+        </h1>
+        
+        <p class="agency-hero-desc">
+          Based in San Francisco, we're a digital products design & development studio passionate about the creation and high applicability of digital experiences.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="agency-cta-row">
+          <a href="#contact" class="btn-agency-solid font-oswald">
+            <span>Start Now</span>
+          </a>
+          <a href="#works" class="btn-agency-outline font-oswald">
+            <span>Learn More</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Partners Footer -->
+        <div class="agency-partners-mini">
+          <span class="partners-label font-oswald">OUR PARTNERS</span>
+          <div class="partners-row font-oswald">
+            <span class="partner-item">zantic</span>
+            <span class="partner-item">BookStore</span>
+            <span class="partner-item">Wager</span>
+            <span class="partner-item">Crono</span>
+            <span class="partner-item">Mercury</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center Column: Futuristic Visor Model overlapping gradient -->
+      <div class="hero-center-col">
+        <div class="model-sunburst-backdrop"></div>
+        <div class="model-img-wrapper">
+          <img src="./assets/agency_hero.png" alt="Futuristic VR Model" class="agency-hero-img">
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Widgets -->
+      <div class="hero-right-col">
+        
+        <!-- absolute /we do tags -->
+        <div class="we-do-hud font-oswald">
+          <span class="we-do-label">/ we do</span>
+          <ul class="we-do-list">
+            <li>BRANDING</li>
+            <li>ART DIRECTION</li>
+            <li>MOTION</li>
+          </ul>
+        </div>
+
+        <!-- Widget 1: Client Achievements Frosted Card -->
+        <div class="frosted-widget achievements-widget">
+          <div class="widget-head">
+            <span class="widget-accent-num font-oswald">400+</span>
+            <span class="widget-title">Projects Done</span>
+          </div>
+          <div class="avatars-row">
+            <!-- Simulated miniature version of our VR model -->
+            <div class="mini-avatar-glow">
+              <img src="./assets/agency_hero.png" alt="Mini avatar">
+            </div>
+            <div class="avatar-count-box font-oswald">+230</div>
+          </div>
+          <a href="#book" class="btn-book-call font-oswald">
+            <span>Book a call</span>
+          </a>
+        </div>
+
+        <!-- Widget 2: Contact by Email Widget -->
+        <div class="frosted-widget email-widget">
+          <h3 class="widget-email-title font-oswald">Contact by Email</h3>
+          <p class="widget-email-desc">Enter your email and we will contact by email</p>
+          
+          <div class="email-input-wrapper">
+            <input type="email" placeholder="Your Email" aria-label="Your Email" class="email-hud-input">
+            <button class="btn-email-submit" aria-label="Submit Email">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: RESULTS CARD & LCD STATS -->
+  <section class="section-agency-results" id="services">
+    <div class="tactical-container">
+      
+      <!-- Big results disclosure frosted panel -->
+      <div class="results-disclosure-card">
+        <div class="disclosure-header">
+          <svg class="world-hud-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span class="disclosure-sub font-oswald">HUD support peoples from all over the world</span>
+        </div>
+        
+        <p class="disclosure-main-text">
+          We're a results-driven marketing <span class="highlight-white">agency passionate</span> about crafting impactful campaigns that <span class="highlight-white">growth for our clients</span>.
+        </p>
+
+        <!-- Digital Retro LCD Stats Row -->
+        <div class="lcd-stats-grid">
+          
+          <div class="lcd-stat-box">
+            <div class="lcd-number-display">86+</div>
+            <div class="lcd-label-display font-oswald">● Project Done</div>
+          </div>
+          
+          <div class="lcd-stat-box">
+            <div class="lcd-number-display">98%</div>
+            <div class="lcd-label-display font-oswald">● Successful Rating</div>
+          </div>
+          
+          <div class="lcd-stat-box">
+            <div class="lcd-number-display">223m</div>
+            <div class="lcd-label-display font-oswald">● Growth Net Worth</div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: PARTNERS CIRCLES GRID -->
+  <section class="section-agency-partners" id="about">
+    <div class="tactical-container">
+      
+      <div class="partners-split-layout">
+        
+        <!-- Left Title -->
+        <div class="partners-title-block">
+          <h2 class="partners-main-heading">
+            Over <span class="highlight-orange-number font-oswald">12</span><br>
+            <span class="white-heading">years</span>
+          </h2>
+          <p class="partners-heading-sub font-oswald">become the partners</p>
+        </div>
+
+        <!-- Right: circular logo grid -->
+        <div class="badges-circular-grid">
+          
+          <!-- Circle 1: Github -->
+          <div class="badge-circle-item hover-grow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </div>
+
+          <!-- Circle 2: Figma / Dribbble-like design icon -->
+          <div class="badge-circle-item hover-grow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"></path>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+            </svg>
+          </div>
+
+          <!-- Circle 3: archin brand text -->
+          <div class="badge-circle-item text-badge hover-grow">
+            <span class="badge-text-val">archin</span>
+          </div>
+
+          <!-- Circle 4: matthew cursive design brand -->
+          <div class="badge-circle-item text-badge cursive hover-grow">
+            <span class="badge-text-val">matthew</span>
+          </div>
+
+          <!-- Circle 5: Zumar Cons block brand -->
+          <div class="badge-circle-item text-badge blocky hover-grow">
+            <span class="badge-text-val">ZUMAR<br><span class="orange-txt">CONS</span></span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Minimal Footer -->
+  <footer class="agency-footer">
+    <div class="tactical-container">
+      <div class="footer-bottom-row">
+        <p>© 2026 AETHER Design Studio. All Rights Reserved.</p>
+        <div class="footer-socials">
+          <a href="#">BEHANCE</a>
+          <a href="#">DRIBBBLE</a>
+          <a href="#">TWITTER</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./agency.js" type="module"></script>
+</body>
+</html>
