@@ -258,11 +258,11 @@ function initParticles() {
       ctx.globalAlpha = this.opacity;
       
       if (isLeafImgLoaded) {
-        // Slicing 4x4 grid cells from the 4096x4096px atlas
+        // Slicing 4x4 grid cells from the atlas
         const cols = 4;
         const col = this.cellIndex % cols;
         const row = Math.floor(this.cellIndex / cols);
-        const cellSize = 4096 / 4; // 1024px per cell (amazing clarity)
+        const cellSize = leafImg.naturalWidth / 4; // Dynamically resolve cell size based on image resolution
         const sx = col * cellSize;
         const sy = row * cellSize;
         
