@@ -309,17 +309,17 @@ function initHudTabs() {
   const tabData = {
     darkzone: {
       text: "Resistance is the second update released for Year 2 of Tom Clancy's The Division and is the biggest free update to date. Resistance area includes a completely new zone of the map.",
-      image: "./assets/division_taxi.png",
+      image: new URL('./assets/division_taxi.png', import.meta.url).href,
       tag: "PVE MISSION"
     },
     jungle: {
       text: "The urban jungle of post-epidemic Manhattan holds deadly secrets. Explore the silent, snow-covered streets, scavenge for critical tactical supplies, and confront rogue street factions.",
-      image: "./assets/division_hero.png",
+      image: new URL('./assets/division_hero.png', import.meta.url).href,
       tag: "URBAN EXPLORATION"
     },
     breathing: {
       text: "A dynamically shifting ecosystem that responds to your actions. Experience changing blizzards, dense tactical fog, and day-night cycles that dramatically impact combat visibility and enemy behavior.",
-      image: "./assets/division_taxi.png",
+      image: new URL('./assets/division_taxi.png', import.meta.url).href,
       tag: "BREATHING NYC"
     }
   };

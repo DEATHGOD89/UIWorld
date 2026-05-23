@@ -156,7 +156,7 @@ function initParticles() {
 
   // Preload high-fidelity transparent leaf atlas
   const leafImg = new Image();
-  leafImg.src = './assets/leaves_atlas.png';
+  leafImg.src = new URL('./assets/leaves_atlas.png', import.meta.url).href;
   let isLeafImgLoaded = false;
   leafImg.onload = () => {
     isLeafImgLoaded = true;
