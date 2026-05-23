@@ -11,6 +11,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initSectionNavigators();
+  initUISelector();
   initMenu();
   initParticles();
   initLuxuryForm();
@@ -53,6 +54,37 @@ function initSectionNavigators() {
   nextBtn.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.href = './verdant.html';
+  });
+}
+
+/* ==========================================================================
+   1C. UI SELECTOR DROPDOWN LOGIC
+   ========================================================================== */
+function initUISelector() {
+  const uiSelector = document.getElementById('ui-selector');
+  const uiSelectBtn = document.getElementById('ui-select-btn');
+  
+  if (!uiSelector || !uiSelectBtn) return;
+  
+  // Toggle dropdown on button click
+  uiSelectBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    uiSelector.classList.toggle('open');
+  });
+  
+  // Close dropdown on clicking anywhere outside
+  document.addEventListener('click', (e) => {
+    if (!uiSelector.contains(e.target)) {
+      uiSelector.classList.remove('open');
+    }
+  });
+  
+  // Close dropdown on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      uiSelector.classList.remove('open');
+    }
   });
 }
 

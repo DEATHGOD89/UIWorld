@@ -57,6 +57,32 @@
           </button>
         </div>
 
+        <!-- UI Template Selector Dropdown -->
+        <div class="ui-selector-dropdown" id="ui-selector">
+          <button class="btn-ui-select" id="ui-select-btn" aria-label="Select UI Template">
+            <span>SELECT UI</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="ui-dropdown-menu" id="ui-dropdown-menu">
+            <div class="ui-dropdown-header">11 Premium UI Templates</div>
+            <ul class="ui-list">
+              <li><a href="./index.html" class="ui-item">UI 1: NEXON (NFT)</a></li>
+              <li><a href="./verdant.html" class="ui-item">UI 2: VERDANT (Nature)</a></li>
+              <li><a href="./division.html" class="ui-item">UI 3: DIVISION (Tactical)</a></li>
+              <li><a href="./agency.html" class="ui-item">UI 4: AGENCY (Sunburst)</a></li>
+              <li><a href="./portfolio.html" class="ui-item">UI 5: PORTFOLIO (Interactive)</a></li>
+              <li><a href="./fionure.html" class="ui-item">UI 6: FIONURE (Mecha)</a></li>
+              <li><a href="./raze.html" class="ui-item">UI 7: RAZE (Grid)</a></li>
+              <li><a href="./tracle.html" class="ui-item active">UI 8: TRACLE (Crypto)</a></li>
+              <li><a href="./muli.html" class="ui-item">UI 9: MULI (Dashboard)</a></li>
+              <li><a href="./nuorbit.html" class="ui-item">UI 10: NUORBIT (Retro)</a></li>
+              <li><a href="./arcane.html" class="ui-item">UI 11: ARCANE (Gaming)</a></li>
+            </ul>
+          </div>
+        </div>
+
         <!-- Tracle Logo capsule -->
         <div class="nav-logo-capsule font-mono">
           <span class="logo-circle"></span>
@@ -473,5 +499,35 @@
   </footer>
 
   <script src="./tracle.js" type="module"></script>
+  <!-- UI Template Selector Dropdown Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const uiSelector = document.getElementById('ui-selector');
+      const uiSelectBtn = document.getElementById('ui-select-btn');
+      
+      if (uiSelector && uiSelectBtn) {
+        // Toggle dropdown on click
+        uiSelectBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          uiSelector.classList.toggle('open');
+        });
+        
+        // Close dropdown on click outside
+        document.addEventListener('click', (e) => {
+          if (!uiSelector.contains(e.target)) {
+            uiSelector.classList.remove('open');
+          }
+        });
+        
+        // Close dropdown on Escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            uiSelector.classList.remove('open');
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
